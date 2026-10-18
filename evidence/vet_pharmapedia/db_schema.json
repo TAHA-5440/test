@@ -1,0 +1,65 @@
+{
+  "table": "medicines_table",
+  "database": "medicines_DB",
+  "columns": [
+    {
+      "name": "docId",
+      "type": "TEXT",
+      "pk": true
+    },
+    {
+      "name": "timeStamp",
+      "type": "INTEGER"
+    },
+    {
+      "name": "saltName",
+      "type": "TEXT"
+    },
+    {
+      "name": "brandName",
+      "type": "TEXT"
+    },
+    {
+      "name": "contraIndications",
+      "type": "TEXT"
+    },
+    {
+      "name": "overview",
+      "type": "TEXT"
+    },
+    {
+      "name": "indications",
+      "type": "TEXT"
+    },
+    {
+      "name": "companyName",
+      "type": "TEXT"
+    },
+    {
+      "name": "countryName",
+      "type": "TEXT"
+    },
+    {
+      "name": "isBrandFavourite",
+      "type": "INTEGER"
+    },
+    {
+      "name": "isSaltFavourite",
+      "type": "INTEGER"
+    },
+    {
+      "name": "block",
+      "type": "TEXT"
+    },
+    {
+      "name": "availableForms",
+      "type": "TEXT"
+    },
+    {
+      "name": "dosageDetail",
+      "type": "TEXT"
+    }
+  ],
+  "source": "extracted from classes.dex string CREATE TABLE IF NOT EXISTS `medicines_table` via REA artifact inspection + manual string recovery (androguard not needed, raw bytes)",
+  "evidence_ref": "rea inspect-artifact Vet+Pharmapedia+Pakistan_1.0.13_APKPure.xapk -> 873 nodes, 963 occurrences, main APK 668bc092..., plus string dump"
+}

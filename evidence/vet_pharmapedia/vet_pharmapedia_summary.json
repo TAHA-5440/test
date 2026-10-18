@@ -1,0 +1,11 @@
+{
+  "app": "Vet Pharmapedia Pakistan",
+  "package": "vet.pharmapedia.vetpharmapediapakistan",
+  "version": "1.0.13 (13)",
+  "xapk_sha256": "6f9781939a3c8caf967aa7d0bbd9429c6f968af66140dcef0db1d426c2d1534c",
+  "apk_sha256": "668bc0920ba4410a17bddce775eab06c10364031f21cff700287fa398cabaf25",
+  "min_sdk": 29,
+  "target_sdk": 36,
+  "xapk_size": 15118799,
+  "apk_size": 14985367
+}
