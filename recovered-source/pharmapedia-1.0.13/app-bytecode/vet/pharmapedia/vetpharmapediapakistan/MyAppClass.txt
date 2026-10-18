@@ -1,0 +1,117 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;
+METHOD <init>()V
+0000 invoke-direct v3, Landroid/app/Application;-><init>()V
+0006 const/4 v0, 0
+0008 iput-boolean v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->g Z
+000c new-instance v0, La7/h;
+0010 new-instance v1, Ll/o;
+0014 const/4 v2, 7
+0016 invoke-direct v1, v3, v2, Ll/o;-><init>(Ljava/lang/Object; I)V
+001c invoke-direct v0, v1, La7/h;-><init>(Ll/o;)V
+0022 iput-object v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->h La7/h;
+0026 return-void
+METHOD a()Ljava/lang/Object;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->h La7/h;
+0004 invoke-virtual v0, La7/h;->a()Ljava/lang/Object;
+000a move-result-object v0
+000c return-object v0
+METHOD attachBaseContext(Landroid/content/Context;)V
+0000 if-nez v1, +006h
+0004 invoke-super v0, v1, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
+000a return-void
+000c invoke-static v1, Ljc/g;->r(Landroid/content/Context;)Landroid/content/Context;
+0012 move-result-object v1
+0014 invoke-super v0, v1, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
+001a return-void
+METHOD b()V
+0000 iget-boolean v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->g Z
+0004 if-nez v0, +015h
+0008 const/4 v0, 1
+000a iput-boolean v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->g Z
+000e iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->h La7/h;
+0012 invoke-virtual v0, La7/h;->a()Ljava/lang/Object;
+0018 move-result-object v0
+001a check-cast v0, Lqc/m;
+001e check-cast v0, Lqc/j;
+0022 invoke-virtual v0, Lqc/j;->a()Ll/o;
+0028 move-result-object v0
+002a iput-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->i Ll/o;
+002e invoke-super v1, Landroid/app/Application;->onCreate()V
+0034 return-void
+METHOD onCreate()V
+0000 invoke-virtual v5, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->b()V
+0006 invoke-virtual v5, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+000c move-result-object v0
+000e sput-object v0, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->k Landroid/content/Context;
+0012 sget v0, Lxc/a;->a I
+0016 iget-object v0, v5, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->i Ll/o;
+001a const-string v1, "mySharedPreference"
+001e const/4 v2, 0
+0020 if-eqz v0, +090h
+0024 iget-object v0, v0, Ll/o;->h Ljava/lang/Object;
+0028 check-cast v0, Landroid/content/SharedPreferences;
+002c const-string v3, "SELECTED_THEME_KEY"
+0030 const/4 v4, 0
+0032 invoke-interface v0, v3, v4, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String; I)I
+0038 move-result v0
+003a sput v0, Lxc/a;->a I
+003e iget-object v0, v5, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->i Ll/o;
+0042 if-eqz v0, +07bh
+0046 invoke-virtual v0, Ll/o;->A()Ljava/lang/String;
+004c move-result-object v0
+004e invoke-static v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+0054 move-result-object v0
+0056 sput-object v0, Lxc/a;->c Ljava/lang/String;
+005a sget v0, Landroid/os/Build$VERSION;->SDK_INT I
+005e const/16 v1, 26
+0062 if-lt v0, v1, +036h
+0066 invoke-virtual v5, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+006c move-result-object v0
+006e const-string v1, "notification"
+0072 invoke-virtual v0, v1, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+0078 move-result-object v0
+007a invoke-virtual v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0080 check-cast v0, Landroid/app/NotificationManager;
+0084 invoke-static Lp6/a;->m()V
+008a const v1, 2131951658
+0090 invoke-virtual v5, v1, Landroid/content/Context;->getString(I)Ljava/lang/String;
+0096 move-result-object v1
+0098 new-instance v3, Ljava/lang/StringBuilder;
+009c invoke-direct v3, Ljava/lang/StringBuilder;-><init>()V
+00a2 invoke-virtual v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00a8 const-string v1, "Vet. Pharmapedia Pakistan"
+00ac invoke-virtual v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00b2 invoke-virtual v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+00b8 move-result-object v1
+00ba invoke-static v1, Lp6/a;->e(Ljava/lang/String;)Landroid/app/NotificationChannel;
+00c0 move-result-object v1
+00c2 invoke-static v1, Lp6/a;->x(Landroid/app/NotificationChannel;)V
+00c8 invoke-static v0, v1, Landroidx/work/impl/background/systemjob/b;->q(Landroid/app/NotificationManager; Landroid/app/NotificationChannel;)V
+00ce invoke-static Lcom/onesignal/OneSignal;->getDebug()Lcom/onesignal/debug/IDebugManager;
+00d4 move-result-object v0
+00d6 sget-object v1, Lcom/onesignal/debug/LogLevel;->VERBOSE Lcom/onesignal/debug/LogLevel;
+00da invoke-interface v0, v1, Lcom/onesignal/debug/IDebugManager;->setLogLevel(Lcom/onesignal/debug/LogLevel;)V
+00e0 const v0, 2131951995
+00e6 invoke-virtual v5, v0, Landroid/content/Context;->getString(I)Ljava/lang/String;
+00ec move-result-object v0
+00ee invoke-virtual v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+00f4 invoke-static v5, v0, Lcom/onesignal/OneSignal;->initWithContext(Landroid/content/Context; Ljava/lang/String;)V
+00fa sget-object v0, Lgb/e0;->a Lnb/d;
+00fe sget-object v0, Lnb/c;->i Lnb/c;
+0102 invoke-static v0, Lgb/w;->b(Lka/g;)Llb/c;
+0108 move-result-object v0
+010a new-instance v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;
+010e const/4 v3, 2
+0110 invoke-direct v1, v3, v2, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(I Lka/c;)V
+0116 const/4 v3, 3
+0118 invoke-static v0, v2, v1, v3, Lgb/w;->p(Lgb/v; Lka/g; Lua/p; I)Lgb/z;
+011e invoke-static Lcom/onesignal/OneSignal;->getNotifications()Lcom/onesignal/notifications/INotificationsManager;
+0124 move-result-object v0
+0126 new-instance v1, Lqc/l;
+012a invoke-direct v1, v5, Lqc/l;-><init>(Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;)V
+0130 invoke-interface v0, v1, Lcom/onesignal/notifications/INotificationsManager;->addClickListener(Lcom/onesignal/notifications/INotificationClickListener;)V
+0136 return-void
+0138 invoke-static v1, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+013e throw v2
+0140 invoke-static v1, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+0146 throw v2

@@ -1,0 +1,173 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/notifications/FirebaseNotifications;
+METHOD <init>()V
+0000 invoke-direct v0, Lcom/google/firebase/messaging/FirebaseMessagingService;-><init>()V
+0006 return-void
+METHOD c(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+0000 invoke-virtual v5, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+0006 move-result-object v0
+0008 invoke-virtual v0, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+000e move-result-object v0
+0010 const v1, 2131755009
+0016 invoke-static v0, v1, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources; I)Landroid/graphics/Bitmap;
+001c move-result-object v0
+001e new-instance v1, Le0/r;
+0022 const-string v2, "CHANNEL_ID"
+0026 invoke-direct v1, v5, v2, Le0/r;-><init>(Landroid/content/Context; Ljava/lang/String;)V
+002c invoke-virtual v5, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+0032 move-result-object v2
+0034 const/high16 v3, 2131099648
+0038 invoke-virtual v2, v3, Landroid/content/Context;->getColor(I)I
+003e move-result v2
+0040 iput v2, v1, Le0/r;->q I
+0044 new-instance v2, Landroid/content/Intent;
+0048 invoke-virtual v5, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+004e move-result-object v3
+0050 const-class v4, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/NotificationsActivity;
+0054 invoke-direct v2, v3, v4, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+005a const v3, 67141632
+0060 invoke-virtual v2, v3, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+0066 const-string v3, "image_url"
+006a invoke-virtual v2, v3, v8, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+0070 const-string v8, "message"
+0074 invoke-virtual v2, v8, v7, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+007a const-string v8, "title"
+007e invoke-virtual v2, v8, v6, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+0084 const-string v8, "actionUrl"
+0088 invoke-virtual v2, v8, v9, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+008e const-string v8, "actionText"
+0092 invoke-virtual v2, v8, v10, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+0098 invoke-static Ljava/lang/System;->currentTimeMillis()J
+009e move-result-wide v8
+00a0 long-to-int v8, v8
+00a2 const/high16 v9, 67108864
+00a6 invoke-static v5, v8, v2, v9, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context; I Landroid/content/Intent; I)Landroid/app/PendingIntent;
+00ac move-result-object v8
+00ae invoke-virtual v1, v0, Le0/r;->e(Landroid/graphics/Bitmap;)V
+00b4 iget-object v9, v1, Le0/r;->v Landroid/app/Notification;
+00b8 const v10, 2131230848
+00be iput v10, v9, Landroid/app/Notification;->icon I
+00c2 new-instance v9, Le0/o;
+00c6 invoke-direct v9, Le0/t;-><init>()V
+00cc const/4 v10, 1
+00ce if-nez v0, +004h
+00d2 const/4 v0, 0
+00d4 goto +9h
+00d6 new-instance v2, Landroidx/core/graphics/drawable/IconCompat;
+00da invoke-direct v2, v10, Landroidx/core/graphics/drawable/IconCompat;-><init>(I)V
+00e0 iput-object v0, v2, Landroidx/core/graphics/drawable/IconCompat;->b Ljava/lang/Object;
+00e4 move-object v0, v2
+00e6 iput-object v0, v9, Le0/o;->e Landroidx/core/graphics/drawable/IconCompat;
+00ea invoke-virtual v1, v9, Le0/r;->g(Le0/t;)V
+00f0 invoke-static v6, Le0/r;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+00f6 move-result-object v6
+00f8 iput-object v6, v1, Le0/r;->e Ljava/lang/CharSequence;
+00fc invoke-static v7, Le0/r;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+0102 move-result-object v6
+0104 iput-object v6, v1, Le0/r;->f Ljava/lang/CharSequence;
+0108 new-instance v6, Le0/p;
+010c const/4 v9, 0
+010e invoke-direct v6, v9, Le0/p;-><init>(I)V
+0114 invoke-static v7, Le0/r;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+011a move-result-object v7
+011c iput-object v7, v6, Le0/p;->f Ljava/lang/Object;
+0120 invoke-virtual v1, v6, Le0/r;->g(Le0/t;)V
+0126 const/16 v6, 16
+012a invoke-virtual v1, v6, v9, Le0/r;->d(I Z)V
+0130 iput v10, v1, Le0/r;->j I
+0134 iput-object v8, v1, Le0/r;->g Landroid/app/PendingIntent;
+0138 invoke-virtual v5, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+013e move-result-object v6
+0140 const-string v7, "notification"
+0144 invoke-virtual v6, v7, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+014a move-result-object v6
+014c invoke-virtual v6, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0152 check-cast v6, Landroid/app/NotificationManager;
+0156 const-string v7, "ALARM_SERVICE_CHANNEL"
+015a iput-object v7, v1, Le0/r;->s Ljava/lang/String;
+015e invoke-static Ljava/lang/System;->currentTimeMillis()J
+0164 move-result-wide v7
+0166 long-to-int v7, v7
+0168 invoke-virtual v1, Le0/r;->a()Landroid/app/Notification;
+016e move-result-object v8
+0170 invoke-virtual v6, v7, v8, Landroid/app/NotificationManager;->notify(I Landroid/app/Notification;)V
+0176 return-void
+0178 move-exception v6
+017a invoke-virtual v6, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+0180 move-result-object v6
+0182 const-string v7, "onMessageReceived:display error: "
+0186 const-string v8, "notifications"
+018a invoke-static v7, v6, v8, Lr1/a;->A(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+0190 return-void
+METHOD onMessageReceived(Lcom/google/firebase/messaging/RemoteMessage;)V
+0000 const-string v1, "notifications"
+0004 const-string v0, "onMessageReceived: title is : "
+0008 invoke-virtual v10, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+000e invoke-super v9, v10, Lcom/google/firebase/messaging/FirebaseMessagingService;->onMessageReceived(Lcom/google/firebase/messaging/RemoteMessage;)V
+0014 invoke-virtual v10, Lcom/google/firebase/messaging/RemoteMessage;->getData()Ljava/util/Map;
+001a move-result-object v2
+001c const-string v3, "titl"
+0020 invoke-interface v2, v3, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+0026 move-result-object v2
+0028 move-object v4, v2
+002a check-cast v4, Ljava/lang/String;
+002e invoke-virtual v10, Lcom/google/firebase/messaging/RemoteMessage;->getData()Ljava/util/Map;
+0034 move-result-object v2
+0036 const-string v3, "bod"
+003a invoke-interface v2, v3, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+0040 move-result-object v2
+0042 move-object v5, v2
+0044 check-cast v5, Ljava/lang/String;
+0048 invoke-virtual v10, Lcom/google/firebase/messaging/RemoteMessage;->getData()Ljava/util/Map;
+004e move-result-object v2
+0050 const-string v3, "pic"
+0054 invoke-interface v2, v3, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+005a move-result-object v2
+005c move-object v6, v2
+005e check-cast v6, Ljava/lang/String;
+0062 invoke-virtual v10, Lcom/google/firebase/messaging/RemoteMessage;->getData()Ljava/util/Map;
+0068 move-result-object v2
+006a const-string v3, "action_link"
+006e invoke-interface v2, v3, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+0074 move-result-object v2
+0076 move-object v7, v2
+0078 check-cast v7, Ljava/lang/String;
+007c invoke-virtual v10, Lcom/google/firebase/messaging/RemoteMessage;->getData()Ljava/util/Map;
+0082 move-result-object v2
+0084 const-string v3, "action_title"
+0088 invoke-interface v2, v3, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+008e move-result-object v2
+0090 move-object v8, v2
+0092 check-cast v8, Ljava/lang/String;
+0096 invoke-virtual v10, Lcom/google/firebase/messaging/RemoteMessage;->getData()Ljava/util/Map;
+009c move-result-object v10
+009e new-instance v2, Ljava/lang/StringBuilder;
+00a2 invoke-direct v2, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+00a8 invoke-virtual v2, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+00ae const-string v10, ", body is : "
+00b2 invoke-virtual v2, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00b8 invoke-virtual v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00be const-string v10, " and link is: "
+00c2 invoke-virtual v2, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00c8 invoke-virtual v2, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00ce invoke-virtual v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+00d4 move-result-object v10
+00d6 invoke-static v1, v10, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+00dc move-object v3, v9
+00de invoke-virtual/range v3 ... v8, Lvet/pharmapedia/vetpharmapediapakistan/notifications/FirebaseNotifications;->c(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+00e4 return-void
+00e6 move-exception v0
+00e8 move-object v10, v0
+00ea invoke-virtual v10, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+00f0 move-result-object v10
+00f2 const-string v0, "onMessageReceived: "
+00f6 invoke-static v0, v10, v1, Lr1/a;->A(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+00fc return-void
+METHOD onNewToken(Ljava/lang/String;)V
+0000 invoke-virtual v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 invoke-super v1, v2, Lcom/google/firebase/messaging/FirebaseMessagingService;->onNewToken(Ljava/lang/String;)V
+000c const-string v0, "onNewToken: "
+0010 invoke-virtual v0, v2, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+0016 move-result-object v2
+0018 const-string v0, "notifications"
+001c invoke-static v0, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+0022 return-void

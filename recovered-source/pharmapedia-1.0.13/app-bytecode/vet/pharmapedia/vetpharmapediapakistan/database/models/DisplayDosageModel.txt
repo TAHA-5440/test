@@ -1,0 +1,114 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;
+METHOD <init>(Ljava/lang/String; Ljava/lang/String; Z)V
+0000 invoke-virtual v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 invoke-virtual v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+000c invoke-direct v0, Ljava/lang/Object;-><init>()V
+0012 iput-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+0016 iput-object v2, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+001a iput-boolean v3, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+001e return-void
+METHOD <init>(Ljava/lang/String; Ljava/lang/String; Z I Lkotlin/jvm/internal/c;)V
+0000 and-int/lit8 v4, v4, 4
+0004 if-eqz v4, +003h
+0008 const/4 v3, 0
+000a invoke-direct v0, v1, v2, v3, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;-><init>(Ljava/lang/String; Ljava/lang/String; Z)V
+0010 return-void
+METHOD copy$default(Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel; Ljava/lang/String; Ljava/lang/String; Z I Ljava/lang/Object;)Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;
+0000 and-int/lit8 v5, v4, 1
+0004 if-eqz v5, +004h
+0008 iget-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+000c and-int/lit8 v5, v4, 2
+0010 if-eqz v5, +004h
+0014 iget-object v2, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+0018 and-int/lit8 v4, v4, 4
+001c if-eqz v4, +004h
+0020 iget-boolean v3, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+0024 invoke-virtual v0, v1, v2, v3, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->copy(Ljava/lang/String; Ljava/lang/String; Z)Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;
+002a move-result-object v0
+002c return-object v0
+METHOD component1()Ljava/lang/String;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+0004 return-object v0
+METHOD component2()Ljava/lang/String;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+0004 return-object v0
+METHOD component3()Z
+0000 iget-boolean v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+0004 return v0
+METHOD copy(Ljava/lang/String; Ljava/lang/String; Z)Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;
+0000 invoke-virtual v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 invoke-virtual v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+000c new-instance v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;
+0010 invoke-direct v0, v2, v3, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;-><init>(Ljava/lang/String; Ljava/lang/String; Z)V
+0016 return-object v0
+METHOD equals(Ljava/lang/Object;)Z
+0000 const/4 v0, 1
+0002 if-ne v4, v5, +003h
+0006 return v0
+0008 instance-of v1, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;
+000c const/4 v2, 0
+000e if-nez v1, +003h
+0012 return v2
+0014 check-cast v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;
+0018 iget-object v1, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+001c iget-object v3, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+0020 invoke-static v1, v3, Lkotlin/jvm/internal/f;->a(Ljava/lang/Object; Ljava/lang/Object;)Z
+0026 move-result v1
+0028 if-nez v1, +003h
+002c return v2
+002e iget-object v1, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+0032 iget-object v3, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+0036 invoke-static v1, v3, Lkotlin/jvm/internal/f;->a(Ljava/lang/Object; Ljava/lang/Object;)Z
+003c move-result v1
+003e if-nez v1, +003h
+0042 return v2
+0044 iget-boolean v1, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+0048 iget-boolean v5, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+004c if-eq v1, v5, +003h
+0050 return v2
+0052 return v0
+METHOD getAnimalName()Ljava/lang/String;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+0004 return-object v0
+METHOD getDosageDetail()Ljava/lang/String;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+0004 return-object v0
+METHOD hashCode()I
+0000 iget-object v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+0004 invoke-virtual v0, Ljava/lang/String;->hashCode()I
+000a move-result v0
+000c const/16 v1, 31
+0010 mul-int/2addr v0, v1
+0012 iget-object v2, v3, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+0016 invoke-static v0, v1, v2, Lr1/a;->c(I I Ljava/lang/String;)I
+001c move-result v0
+001e iget-boolean v1, v3, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+0022 invoke-static v1, Ljava/lang/Boolean;->hashCode(Z)I
+0028 move-result v1
+002a add-int/2addr v1, v0
+002c return v1
+METHOD isVisible()Z
+0000 iget-boolean v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+0004 return v0
+METHOD setVisible(Z)V
+0000 iput-boolean v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+0004 return-void
+METHOD toString()Ljava/lang/String;
+0000 iget-object v0, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->animalName Ljava/lang/String;
+0004 iget-object v1, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->dosageDetail Ljava/lang/String;
+0008 iget-boolean v2, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;->isVisible Z
+000c new-instance v3, Ljava/lang/StringBuilder;
+0010 const-string v4, "DisplayDosageModel(animalName="
+0014 invoke-direct v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+001a invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0020 const-string v0, ", dosageDetail="
+0024 invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+002a invoke-virtual v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0030 const-string v0, ", isVisible="
+0034 invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+003a invoke-virtual v3, v2, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+0040 const-string v0, ")"
+0044 invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+004a invoke-virtual v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+0050 move-result-object v0
+0052 return-object v0

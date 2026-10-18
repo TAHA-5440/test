@@ -1,0 +1,190 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;
+METHOD <init>()V
+0000 invoke-direct v2, Lqc/b;-><init>()V
+0006 const/4 v0, 0
+0008 iput-boolean v0, v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;->u Z
+000c new-instance v0, Lvc/p;
+0010 const/16 v1, 8
+0014 invoke-direct v0, v2, v1, Lvc/p;-><init>(Lqc/b; I)V
+001a invoke-virtual v2, v0, Landroidx/activity/p;->addOnContextAvailableListener(Le/b;)V
+0020 return-void
+METHOD m()V
+0000 invoke-virtual v6, Lqc/b;->j()Landroid/app/Activity;
+0006 move-result-object v0
+0008 invoke-static v0, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+000e move-result-object v0
+0010 const v1, 2131558466
+0016 const/4 v2, 0
+0018 const/4 v3, 0
+001a invoke-virtual v0, v1, v2, v3, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+0020 move-result-object v0
+0022 const v1, 2131361921
+0028 invoke-static v0, v1, La/a;->h(Landroid/view/View; I)Landroid/view/View;
+002e move-result-object v2
+0030 check-cast v2, Lcom/google/android/material/button/MaterialButton;
+0034 if-eqz v2, +064h
+0038 const v1, 2131361922
+003e invoke-static v0, v1, La/a;->h(Landroid/view/View; I)Landroid/view/View;
+0044 move-result-object v4
+0046 check-cast v4, Lcom/google/android/material/button/MaterialButton;
+004a if-eqz v4, +059h
+004e const v1, 2131362444
+0054 invoke-static v0, v1, La/a;->h(Landroid/view/View; I)Landroid/view/View;
+005a move-result-object v5
+005c check-cast v5, Lcom/google/android/material/textview/MaterialTextView;
+0060 if-eqz v5, +04eh
+0064 const v1, 2131362445
+006a invoke-static v0, v1, La/a;->h(Landroid/view/View; I)Landroid/view/View;
+0070 move-result-object v5
+0072 check-cast v5, Lcom/google/android/material/textview/MaterialTextView;
+0076 if-eqz v5, +043h
+007a check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout;
+007e new-instance v1, Lv4/e;
+0082 invoke-virtual v6, Lqc/b;->j()Landroid/app/Activity;
+0088 move-result-object v5
+008a invoke-direct v1, v5, Lv4/e;-><init>(Landroid/app/Activity;)V
+0090 const v5, 2131230885
+0096 invoke-virtual v0, v5, Landroid/view/View;->setBackgroundResource(I)V
+009c invoke-virtual v1, v0, Lv4/e;->setContentView(Landroid/view/View;)V
+00a2 invoke-virtual v1, v3, Lv4/e;->setCancelable(Z)V
+00a8 invoke-virtual v1, v3, Lv4/e;->setCanceledOnTouchOutside(Z)V
+00ae invoke-virtual v1, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+00b4 move-result-object v0
+00b6 if-eqz v0, +00dh
+00ba new-instance v3, Landroid/graphics/drawable/ColorDrawable;
+00be const v5, -7829368
+00c4 invoke-direct v3, v5, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+00ca invoke-virtual v0, v3, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+00d0 new-instance v0, Lp5/j;
+00d4 const/16 v3, 10
+00d8 invoke-direct v0, v3, v6, v1, Lp5/j;-><init>(I Ljava/lang/Object; Ljava/lang/Object;)V
+00de invoke-virtual v4, v0, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+00e4 new-instance v0, Lvc/s;
+00e8 invoke-direct v0, v6, v1, Lvc/s;-><init>(Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity; Lv4/e;)V
+00ee invoke-virtual v2, v0, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+00f4 invoke-virtual v1, Landroid/app/Dialog;->show()V
+00fa return-void
+00fc invoke-virtual v0, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+0102 move-result-object v0
+0104 invoke-virtual v0, v1, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+010a move-result-object v0
+010c const-string v1, "Missing required view with ID: "
+0110 invoke-virtual v1, v0, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+0116 move-result-object v0
+0118 invoke-static v0, Lcom/onesignal/notifications/internal/badges/impl/shortcutbadger/impl/a;->j(Ljava/lang/String;)V
+011e return-void
+METHOD n()V
+0000 iget-boolean v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;->u Z
+0004 if-nez v0, +047h
+0008 const/4 v0, 1
+000a iput-boolean v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;->u Z
+000e invoke-virtual v3, Lqc/b;->a()Ljava/lang/Object;
+0014 move-result-object v0
+0016 check-cast v0, Lvc/t;
+001a check-cast v0, Lqc/f;
+001e iget-object v1, v0, Lqc/f;->b Lqc/j;
+0022 iget-object v2, v1, Lqc/j;->e Ld7/b;
+0026 invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+002c move-result-object v2
+002e check-cast v2, Lxc/g;
+0032 iput-object v2, v3, Lqc/b;->p Lxc/g;
+0036 iget-object v2, v1, Lqc/j;->f Ld7/b;
+003a invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+0040 move-result-object v2
+0042 check-cast v2, Lxc/h;
+0046 iput-object v2, v3, Lqc/b;->q Lxc/h;
+004a invoke-virtual v1, Lqc/j;->a()Ll/o;
+0050 move-result-object v2
+0052 iput-object v2, v3, Lqc/b;->r Ll/o;
+0056 iget-object v2, v1, Lqc/j;->i Ld7/b;
+005a invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+0060 move-result-object v2
+0062 check-cast v2, Ltc/b;
+0066 iput-object v2, v3, Lqc/b;->s Ltc/b;
+006a iget-object v1, v1, Lqc/j;->j Ld7/b;
+006e invoke-interface v1, Lfa/a;->get()Ljava/lang/Object;
+0074 move-result-object v1
+0076 check-cast v1, Lcom/bumptech/glide/q;
+007a iput-object v1, v3, Lqc/b;->t Lcom/bumptech/glide/q;
+007e iget-object v0, v0, Lqc/f;->m Ld7/b;
+0082 invoke-interface v0, Lfa/a;->get()Ljava/lang/Object;
+0088 move-result-object v0
+008a check-cast v0, Luc/i;
+008e iput-object v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;->v Luc/i;
+0092 return-void
+METHOD onCreate(Landroid/os/Bundle;)V
+0000 invoke-super v4, v5, Lqc/b;->onCreate(Landroid/os/Bundle;)V
+0006 iget-object v5, v4, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;->v Luc/i;
+000a const/4 v0, 0
+000c const-string v1, "binding"
+0010 if-eqz v5, +079h
+0014 iget-object v5, v5, Luc/i;->a Landroidx/constraintlayout/widget/ConstraintLayout;
+0018 invoke-virtual v4, v5, Lqc/b;->setContentView(Landroid/view/View;)V
+001e invoke-static Lcom/google/firebase/messaging/FirebaseMessaging;->getInstance()Lcom/google/firebase/messaging/FirebaseMessaging;
+0024 move-result-object v5
+0026 const-string v2, "allUsers"
+002a invoke-virtual v5, v2, Lcom/google/firebase/messaging/FirebaseMessaging;->subscribeToTopic(Ljava/lang/String;)Lcom/google/android/gms/tasks/Task;
+0030 const/4 v5, 6
+0032 invoke-static v4, v5, Lqc/b;->g(Lqc/b; I)V
+0038 invoke-static Lxc/f;->a()V
+003e new-instance v5, Lrc/q;
+0042 invoke-virtual v4, Landroidx/fragment/app/n0;->d()Landroidx/fragment/app/i1;
+0048 move-result-object v2
+004a invoke-virtual v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0050 invoke-virtual v4, Landroidx/activity/p;->getLifecycle()Landroidx/lifecycle/p;
+0056 move-result-object v3
+0058 invoke-virtual v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+005e invoke-direct v5, v2, v3, Lrc/q;-><init>(Landroidx/fragment/app/i1; Landroidx/lifecycle/p;)V
+0064 iget-object v2, v4, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;->v Luc/i;
+0068 if-eqz v2, +049h
+006c iget-object v2, v2, Luc/i;->c Landroidx/viewpager2/widget/ViewPager2;
+0070 invoke-virtual v2, v5, Landroidx/viewpager2/widget/ViewPager2;->setAdapter(Lw1/k0;)V
+0076 invoke-static Lcom/google/firebase/database/FirebaseDatabase;->getInstance()Lcom/google/firebase/database/FirebaseDatabase;
+007c move-result-object v5
+007e invoke-virtual v5, Lcom/google/firebase/database/FirebaseDatabase;->getReference()Lcom/google/firebase/database/DatabaseReference;
+0084 move-result-object v5
+0086 const-string v2, "AppVersion"
+008a invoke-virtual v5, v2, Lcom/google/firebase/database/DatabaseReference;->child(Ljava/lang/String;)Lcom/google/firebase/database/DatabaseReference;
+0090 move-result-object v5
+0092 new-instance v2, Ll/o;
+0096 const/16 v3, 21
+009a invoke-direct v2, v4, v3, Ll/o;-><init>(Ljava/lang/Object; I)V
+00a0 invoke-virtual v5, v2, Lcom/google/firebase/database/Query;->addValueEventListener(Lcom/google/firebase/database/ValueEventListener;)Lcom/google/firebase/database/ValueEventListener;
+00a6 iget-object v5, v4, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;->v Luc/i;
+00aa if-eqz v5, +024h
+00ae iget-object v0, v5, Luc/i;->c Landroidx/viewpager2/widget/ViewPager2;
+00b2 const/4 v1, 0
+00b4 invoke-virtual v0, v1, Landroidx/viewpager2/widget/ViewPager2;->setUserInputEnabled(Z)V
+00ba iget-object v1, v5, Luc/i;->b Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+00be new-instance v2, Landroidx/work/impl/b;
+00c2 const/16 v3, 20
+00c6 invoke-direct v2, v5, v3, Landroidx/work/impl/b;-><init>(Ljava/lang/Object; I)V
+00cc invoke-virtual v1, v2, Li5/q;->setOnItemSelectedListener(Li5/o;)V
+00d2 new-instance v1, Lr2/c;
+00d6 const/4 v2, 2
+00d8 invoke-direct v1, v5, v2, Lr2/c;-><init>(Ljava/lang/Object; I)V
+00de iget-object v5, v0, Landroidx/viewpager2/widget/ViewPager2;->i Lr2/c;
+00e2 iget-object v5, v5, Lr2/c;->b Ljava/lang/Object;
+00e6 check-cast v5, Ljava/util/ArrayList;
+00ea invoke-virtual v5, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+00f0 return-void
+00f2 invoke-static v1, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+00f8 throw v0
+00fa invoke-static v1, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+0100 throw v0
+0102 invoke-static v1, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+0108 throw v0
+METHOD onResume()V
+0000 invoke-super v3, Landroidx/fragment/app/n0;->onResume()V
+0006 invoke-static Lcom/google/firebase/database/FirebaseDatabase;->getInstance()Lcom/google/firebase/database/FirebaseDatabase;
+000c move-result-object v0
+000e invoke-virtual v0, Lcom/google/firebase/database/FirebaseDatabase;->getReference()Lcom/google/firebase/database/DatabaseReference;
+0014 move-result-object v0
+0016 const-string v1, "AppVersion"
+001a invoke-virtual v0, v1, Lcom/google/firebase/database/DatabaseReference;->child(Ljava/lang/String;)Lcom/google/firebase/database/DatabaseReference;
+0020 move-result-object v0
+0022 new-instance v1, Ll/o;
+0026 const/16 v2, 21
+002a invoke-direct v1, v3, v2, Ll/o;-><init>(Ljava/lang/Object; I)V
+0030 invoke-virtual v0, v1, Lcom/google/firebase/database/Query;->addValueEventListener(Lcom/google/firebase/database/ValueEventListener;)Lcom/google/firebase/database/ValueEventListener;
+0036 return-void

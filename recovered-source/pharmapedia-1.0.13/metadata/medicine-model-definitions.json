@@ -1,0 +1,248 @@
+{
+  "definitions_only_no_records": true,
+  "models": [
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/AvailableFormsModel;",
+      "fields": [
+        {
+          "name": "packing",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "price",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "weight",
+          "descriptor": "Ljava/lang/String;"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;",
+      "fields": [
+        {
+          "name": "icon",
+          "descriptor": "I"
+        },
+        {
+          "name": "isSajid",
+          "descriptor": "Z"
+        },
+        {
+          "name": "name",
+          "descriptor": "Ljava/lang/String;"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayDosageModel;",
+      "fields": [
+        {
+          "name": "animalName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "dosageDetail",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "isVisible",
+          "descriptor": "Z"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayFormsDetailModel;",
+      "fields": [
+        {
+          "name": "formName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "packing",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "price",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "saltName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "weight",
+          "descriptor": "Ljava/lang/String;"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayFormsModel;",
+      "fields": [
+        {
+          "name": "formName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "isVisible",
+          "descriptor": "Z"
+        },
+        {
+          "name": "list",
+          "descriptor": "Ljava/util/ArrayList;"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/LanguagesModel;",
+      "fields": [
+        {
+          "name": "flag",
+          "descriptor": "I"
+        },
+        {
+          "name": "name",
+          "descriptor": "I"
+        },
+        {
+          "name": "speakAvailable",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "speechAvailable",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "translationAbbr",
+          "descriptor": "Ljava/lang/String;"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesMainItemsModel;",
+      "fields": [
+        {
+          "name": "itemIcon",
+          "descriptor": "I"
+        },
+        {
+          "name": "itemName",
+          "descriptor": "Ljava/lang/String;"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;",
+      "fields": [
+        {
+          "name": "availableForms",
+          "descriptor": "Ljava/util/Map;"
+        },
+        {
+          "name": "block",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "brandName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "companyName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "contraIndications",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "countryName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "docId",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "dosageDetail",
+          "descriptor": "Ljava/util/Map;"
+        },
+        {
+          "name": "indications",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "isBrandFavourite",
+          "descriptor": "Z"
+        },
+        {
+          "name": "isSaltFavourite",
+          "descriptor": "Z"
+        },
+        {
+          "name": "overview",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "saltName",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "timeStamp",
+          "descriptor": "J"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/SettingsModel;",
+      "fields": [
+        {
+          "name": "description",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "heading",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "icon",
+          "descriptor": "I"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/SlidersModel;",
+      "fields": [
+        {
+          "name": "anyNote",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "buttonText",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "canShow",
+          "descriptor": "Z"
+        },
+        {
+          "name": "picLink",
+          "descriptor": "Ljava/lang/String;"
+        },
+        {
+          "name": "redirectLink",
+          "descriptor": "Ljava/lang/String;"
+        }
+      ]
+    },
+    {
+      "class": "Lvet/pharmapedia/vetpharmapediapakistan/database/models/ThemesModel;",
+      "fields": [
+        {
+          "name": "selectedTheme",
+          "descriptor": "I"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "status": "sanitized_recovered_client_reference_code",
+  "input_xapk_sha256": "6f9781939a3c8caf967aa7d0bbd9429c6f968af66140dcef0db1d426c2d1534c",
+  "package": "vet.pharmapedia.vetpharmapediapakistan",
+  "version": "1.0.13",
+  "engine": "Androguard DAD 4.1.4",
+  "totals": {
+    "classes": 11178,
+    "instruction_listings": 11178,
+    "java_approximations": 11178
+  },
+  "archives": [
+    {
+      "dex": "classes.dex",
+      "input_dex_sha256": "0d0748d85471aad54415fcb7661cd66aa9a72f880ce4ff0304f31238d5965fc7",
+      "source_archive": "archives/classes.dex-source.zip",
+      "archive_bytes": 21947312,
+      "archive_sha256": "86463320f2d917b8fd05ce4a8f6abf4839e73ab412e8fb516aef6fb532a1fba9",
+      "classes": 10189,
+      "instruction_listings": 10189,
+      "java_approximations": 10189,
+      "java_fallbacks": {}
+    },
+    {
+      "dex": "classes2.dex",
+      "input_dex_sha256": "e75649365f66ff4548f35de45406b2153cafa70616560a311e8926b216986baf",
+      "source_archive": "archives/classes2.dex-source.zip",
+      "archive_bytes": 62823,
+      "archive_sha256": "d80977b6fa2ab417889689ff67dae259aca20100b48ad326b2800fcbaa06e552",
+      "classes": 36,
+      "instruction_listings": 36,
+      "java_approximations": 36,
+      "java_fallbacks": {}
+    },
+    {
+      "dex": "classes3.dex",
+      "input_dex_sha256": "1236d37db1f42f2b0379dcefa2baf74f437f5dfc340462f0e9a19861bd49301a",
+      "source_archive": "archives/classes3.dex-source.zip",
+      "archive_bytes": 2241235,
+      "archive_sha256": "a5c280f0af2e05949a0db3886481e7fb92253b16738acedd8e043790bd123046",
+      "classes": 953,
+      "instruction_listings": 953,
+      "java_approximations": 953,
+      "java_fallbacks": {}
+    }
+  ],
+  "original_source_project_recovered": false,
+  "native_cpp_source_recovered": false,
+  "firebase_backend_code_included": false,
+  "medicine_records_included": false,
+  "original_apks_databases_keys_and_media_excluded": true,
+  "credential_redactions_applied": true
+}

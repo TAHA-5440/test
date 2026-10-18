@@ -1,0 +1,5 @@
+<selector xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_checkable="true" android:state_checked="true" android:color="?7F04012D"/>
+  <item android:color="?7F040131" app:state_swiped="true"/>
+  <item android:color="@android:0106000D"/>
+</selector>

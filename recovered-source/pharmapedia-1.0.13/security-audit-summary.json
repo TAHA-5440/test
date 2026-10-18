@@ -1,0 +1,17 @@
+{
+  "status": "recognized_credential_audit_passed",
+  "scan_engine": "detect-secrets 1.5.0 plus publication-specific checks",
+  "network_credential_verification_used": false,
+  "plaintext_files_in_audited_snapshot": 1795,
+  "source_archive_entries_scanned": 22359,
+  "unresolved_findings": 0,
+  "reviewed_noncredential_matches": 8,
+  "sanitized_categories": [
+    "recognized plaintext credentials",
+    "recognized Base64-encoded credentials",
+    "named client configuration",
+    "private Drive artifact links"
+  ],
+  "tool_unit_tests_passed": 28,
+  "limitations": "Not a guarantee about all possible encoded constants. Original APKs, private data and recovered key files are excluded."
+}

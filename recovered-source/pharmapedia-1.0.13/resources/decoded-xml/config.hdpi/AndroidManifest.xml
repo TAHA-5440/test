@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="13" android:splitTypes="base__density" package="vet.pharmapedia.vetpharmapediapakistan" split="config.hdpi">
+  <application android:hasCode="false" android:extractNativeLibs="false">
+    <meta-data android:name="com.android.vending.derived.apk.id" android:value="3"/>
+  </application>
+  <uses-sdk android:minSdkVersion="29"/>
+</manifest>

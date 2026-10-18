@@ -1,0 +1,3 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="-1" android:layout_height="-2">
+  <com.google.android.material.imageview.ShapeableImageView android:id="@7F0A0271" android:background="@7F060000" android:layout_width="@7F07013B" android:layout_height="@7F07013B" android:layout_margin="@7F070261" android:elevation="@7F07016D" app:contentPadding="@7F0700F3" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:shapeAppearance="@7F14012F" app:srcCompat="@7F08022B"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

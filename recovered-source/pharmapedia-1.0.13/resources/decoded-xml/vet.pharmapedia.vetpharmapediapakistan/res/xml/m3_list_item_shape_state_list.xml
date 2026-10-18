@@ -1,0 +1,11 @@
+<selector xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_checkable="true" android:state_checked="true" app:shapeAppearance="?7F040337"/>
+  <item android:state_pressed="true" app:shapeAppearance="?7F04033D"/>
+  <item android:state_focused="true" app:shapeAppearance="?7F040339"/>
+  <item android:state_hovered="true" app:shapeAppearance="?7F04033A"/>
+  <item android:state_single="true" app:shapeAppearance="?7F04033E"/>
+  <item android:state_first="true" app:shapeAppearance="?7F040338"/>
+  <item android:state_last="true" app:shapeAppearance="?7F04033B"/>
+  <item android:state_middle="true" app:shapeAppearance="?7F04033C"/>
+  <item app:shapeAppearance="?7F04033C"/>
+</selector>

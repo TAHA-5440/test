@@ -1,0 +1,237 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;
+METHOD <init>(Lvet/pharmapedia/vetpharmapediapakistan/utils/b; Lka/c;)V
+0000 iput-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;->h Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+0004 const/4 v1, 2
+0006 invoke-direct v0, v1, v2, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(I Lka/c;)V
+000c return-void
+METHOD create(Ljava/lang/Object; Lka/c;)Lka/c;
+0000 new-instance v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;
+0004 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;->h Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+0008 invoke-direct v2, v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;-><init>(Lvet/pharmapedia/vetpharmapediapakistan/utils/b; Lka/c;)V
+000e return-object v2
+METHOD invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+0000 check-cast v1, Lgb/v;
+0004 check-cast v2, Lka/c;
+0008 invoke-virtual v0, v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;->create(Ljava/lang/Object; Lka/c;)Lka/c;
+000e move-result-object v1
+0010 check-cast v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;
+0014 sget-object v2, Lga/p;->a Lga/p;
+0018 invoke-virtual v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+001e move-result-object v1
+0020 return-object v1
+METHOD invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+0000 move-object/from16 v1, v17
+0004 const-string v2, ""
+0008 sget-object v3, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->g Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+000c iget v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;->g I
+0010 const/4 v4, 1
+0012 const/4 v5, 0
+0014 if-eqz v0, +00fh
+0018 if-ne v0, v4, +007h
+001c invoke-static/range v18, Lkotlin/b;->b(Ljava/lang/Object;)V
+0022 goto/16 +188h
+0026 const-string v0, "call to 'resume' before 'invoke' with coroutine"
+002a invoke-static v0, Lcom/onesignal/notifications/internal/badges/impl/shortcutbadger/impl/a;->w(Ljava/lang/String;)V
+0030 return-object v5
+0032 invoke-static/range v18, Lkotlin/b;->b(Ljava/lang/Object;)V
+0038 sget-object v0, Lxc/i;->a Ljava/util/ArrayList;
+003c iget-object v6, v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;->h Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+0040 iget-object v0, v6, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->g Ljava/lang/String;
+0044 iget-object v7, v6, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->h Ljava/lang/String;
+0048 const-string v8, "en"
+004c const-string v9, "trans"
+0050 const-string v10, "sentences"
+0054 const-string v11, "UTF-8"
+0058 const/4 v12, 0
+005a invoke-static v7, v11, Ljava/net/URLEncoder;->encode(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+0060 move-result-object v7
+0062 invoke-static v8, v11, Ljava/net/URLEncoder;->encode(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+0068 move-result-object v8
+006a invoke-static v0, v11, Ljava/net/URLEncoder;->encode(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+0070 move-result-object v0
+0072 new-instance v11, Ljava/lang/StringBuilder;
+0076 invoke-direct v11, Ljava/lang/StringBuilder;-><init>()V
+007c const-string v13, "https://translate.google.com/translate_a/single?&client=gtx&sl=%s&tl=%s&q=%s&dt=t"
+0080 filled-new-array v8, v7, v0, [Ljava/lang/Object;
+0086 move-result-object v14
+0088 const/4 v15, 3
+008a invoke-static v14, v15, Ljava/util/Arrays;->copyOf([Ljava/lang/Object; I)[Ljava/lang/Object;
+0090 move-result-object v14
+0092 invoke-static v13, v14, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+0098 move-result-object v13
+009a invoke-static v13, Lg6/f0;->j(Ljava/lang/String;)Ljava/lang/String;
+00a0 move-result-object v13
+00a2 invoke-static v13, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+00a8 move-result v14
+00aa if-nez v14, +030h
+00ae new-instance v14, Lorg/json/JSONArray;
+00b2 invoke-direct v14, v13, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+00b8 invoke-virtual v14, v12, Lorg/json/JSONArray;->getJSONArray(I)Lorg/json/JSONArray;
+00be move-result-object v13
+00c0 invoke-virtual v13, Lorg/json/JSONArray;->length()I
+00c6 move-result v14
+00c8 move v4, v12
+00ca if-ge v4, v14, +020h
+00ce invoke-virtual v13, v4, Lorg/json/JSONArray;->getJSONArray(I)Lorg/json/JSONArray;
+00d4 move-result-object v5
+00d6 invoke-virtual v5, v12, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+00dc move-result-object v5
+00de invoke-static v5, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+00e4 move-result v16
+00e6 if-nez v16, +00dh
+00ea const-string v12, "null"
+00ee invoke-static v5, v12, Lkotlin/jvm/internal/f;->a(Ljava/lang/Object; Ljava/lang/Object;)Z
+00f4 move-result v12
+00f6 if-nez v12, +005h
+00fa invoke-virtual v11, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0100 add-int/lit8 v4, v4, 1
+0104 const/4 v5, 0
+0106 const/4 v12, 0
+0108 goto -1fh
+010a invoke-virtual v11, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+0110 move-result-object v4
+0112 invoke-virtual v4, Ljava/lang/String;->length()I
+0118 move-result v4
+011a if-nez v4, +0b0h
+011e const-string v4, "https://clients4.google.com/translate_a/t?client=dict-chrome-ex&sl=%s&tl=%s&q=%s&dt=t"
+0122 filled-new-array v8, v7, v0, [Ljava/lang/Object;
+0128 move-result-object v0
+012a invoke-static v0, v15, Ljava/util/Arrays;->copyOf([Ljava/lang/Object; I)[Ljava/lang/Object;
+0130 move-result-object v0
+0132 invoke-static v4, v0, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+0138 move-result-object v0
+013a invoke-static v0, Lg6/f0;->j(Ljava/lang/String;)Ljava/lang/String;
+0140 move-result-object v0
+0142 invoke-static v0, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+0148 move-result v4
+014a if-nez v4, +098h
+014e new-instance v4, Lorg/json/JSONTokener;
+0152 invoke-direct v4, v0, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
+0158 invoke-virtual v4, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
+015e move-result-object v0
+0160 instance-of v4, v0, Lorg/json/JSONObject;
+0164 if-eqz v4, +031h
+0168 move-object v4, v0
+016a check-cast v4, Lorg/json/JSONObject;
+016e invoke-virtual v4, v10, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+0174 move-result v4
+0176 if-eqz v4, +082h
+017a check-cast v0, Lorg/json/JSONObject;
+017e invoke-virtual v0, v10, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+0184 move-result-object v0
+0186 invoke-virtual v0, Lorg/json/JSONArray;->length()I
+018c move-result v4
+018e const/4 v5, 0
+0190 if-ge v5, v4, +075h
+0194 invoke-virtual v0, v5, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+019a move-result-object v7
+019c if-eqz v7, +012h
+01a0 invoke-virtual v7, v9, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+01a6 move-result v8
+01a8 if-eqz v8, +00ch
+01ac invoke-virtual v7, v9, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+01b2 move-result-object v7
+01b4 invoke-virtual v11, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+01ba goto +3h
+01bc move-exception v0
+01be goto +63h
+01c0 add-int/lit8 v5, v5, 1
+01c4 goto -1ah
+01c6 instance-of v4, v0, Lorg/json/JSONArray;
+01ca if-eqz v4, +019h
+01ce move-object v4, v0
+01d0 check-cast v4, Lorg/json/JSONArray;
+01d4 invoke-virtual v4, Lorg/json/JSONArray;->length()I
+01da move-result v4
+01dc const/4 v5, 0
+01de if-ge v5, v4, +04eh
+01e2 move-object v7, v0
+01e4 check-cast v7, Lorg/json/JSONArray;
+01e8 invoke-virtual v7, v5, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+01ee move-result-object v7
+01f0 invoke-virtual v11, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+01f6 add-int/lit8 v5, v5, 1
+01fa goto -eh
+01fc instance-of v4, v0, Ljava/util/ArrayList;
+0200 if-eqz v4, +03dh
+0204 move-object v4, v0
+0206 check-cast v4, Ljava/util/Collection;
+020a invoke-interface v4, Ljava/util/Collection;->size()I
+0210 move-result v4
+0212 const/4 v5, 0
+0214 if-ge v5, v4, +033h
+0218 move-object v7, v0
+021a check-cast v7, Ljava/util/ArrayList;
+021e invoke-virtual v7, v5, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+0224 move-result-object v7
+0226 instance-of v8, v7, Ljava/util/ArrayList;
+022a if-eqz v8, +01ch
+022e move-object v8, v7
+0230 check-cast v8, Ljava/util/ArrayList;
+0234 invoke-virtual v8, Ljava/util/ArrayList;->size()I
+023a move-result v8
+023c if-lez v8, +01ch
+0240 check-cast v7, Ljava/util/ArrayList;
+0244 const/4 v8, 0
+0246 invoke-virtual v7, v8, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+024c move-result-object v7
+024e instance-of v8, v7, Ljava/lang/String;
+0252 if-eqz v8, +011h
+0256 check-cast v7, Ljava/lang/String;
+025a invoke-virtual v11, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0260 goto +ah
+0262 instance-of v8, v7, Ljava/lang/String;
+0266 if-eqz v8, +007h
+026a check-cast v7, Ljava/lang/String;
+026e invoke-virtual v11, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0274 add-int/lit8 v5, v5, 1
+0278 goto -32h
+027a invoke-virtual v11, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+0280 move-result-object v0
+0282 goto +ah
+0284 invoke-virtual v0, Ljava/lang/Throwable;->printStackTrace()V
+028a goto +5h
+028c move-exception v0
+028e invoke-virtual v0, Ljava/lang/Throwable;->printStackTrace()V
+0294 move-object v0, v2
+0296 new-instance v4, Lkotlin/jvm/internal/Ref$ObjectRef;
+029a invoke-direct v4, Ljava/lang/Object;-><init>()V
+02a0 iput-object v2, v4, Lkotlin/jvm/internal/Ref$ObjectRef;->g Ljava/lang/Object;
+02a4 invoke-virtual v0, v2, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+02aa move-result v2
+02ac if-nez v2, +02fh
+02b0 sget-object v2, Ljava/util/Locale;->ROOT Ljava/util/Locale;
+02b4 invoke-virtual v0, v2, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+02ba move-result-object v5
+02bc invoke-virtual v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+02c2 const-string v7, "javax.net.ssl"
+02c6 const/4 v8, 0
+02c8 invoke-static v5, v7, v8, Ldb/i;->T(Ljava/lang/CharSequence; Ljava/lang/CharSequence; Z)Z
+02ce move-result v5
+02d0 if-nez v5, +01dh
+02d4 invoke-virtual v0, v2, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+02da move-result-object v2
+02dc invoke-virtual v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+02e2 const-string v5, "java.net.unknownhostexception"
+02e6 invoke-static v2, v5, v8, Ldb/i;->T(Ljava/lang/CharSequence; Ljava/lang/CharSequence; Z)Z
+02ec move-result v2
+02ee if-nez v2, +00eh
+02f2 sget-object v2, Lxc/i;->a Ljava/util/ArrayList;
+02f6 invoke-static v0, v8, Landroid/text/Html;->fromHtml(Ljava/lang/String; I)Landroid/text/Spanned;
+02fc move-result-object v0
+02fe invoke-static v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+0304 move-result-object v0
+0306 iput-object v0, v4, Lkotlin/jvm/internal/Ref$ObjectRef;->g Ljava/lang/Object;
+030a sget-object v0, Lgb/e0;->a Lnb/d;
+030e sget-object v0, Llb/k;->a Lhb/d;
+0312 new-instance v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1$1;
+0316 const/4 v5, 0
+0318 invoke-direct v2, v6, v4, v5, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1$1;-><init>(Lvet/pharmapedia/vetpharmapediapakistan/utils/b; Lkotlin/jvm/internal/Ref$ObjectRef; Lka/c;)V
+031e const/4 v4, 1
+0320 iput v4, v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;->g I
+0324 invoke-static v0, v2, v1, Lgb/w;->z(Lka/g; Lua/p; Lka/c;)Ljava/lang/Object;
+032a move-result-object v0
+032c if-ne v0, v3, +003h
+0330 return-object v3
+0332 sget-object v0, Lga/p;->a Lga/p;
+0336 return-object v0

@@ -1,0 +1,60 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/ui/fragments/a;
+METHOD <init>(Lwc/l;)V
+0000 invoke-direct v0, Ljava/lang/Object;-><init>()V
+0006 iput-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/ui/fragments/a;->g Lwc/l;
+000a return-void
+METHOD invoke(Ljava/lang/Object;)Ljava/lang/Object;
+0000 move-object v1, v10
+0002 check-cast v1, Lcom/google/firebase/firestore/QuerySnapshot;
+0006 invoke-virtual v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+000c invoke-virtual v1, Lcom/google/firebase/firestore/QuerySnapshot;->size()I
+0012 move-result v4
+0014 new-instance v3, Lkotlin/jvm/internal/Ref$IntRef;
+0018 invoke-direct v3, Ljava/lang/Object;-><init>()V
+001e invoke-virtual v1, Lcom/google/firebase/firestore/QuerySnapshot;->size()I
+0024 move-result v10
+0026 const-string v6, "myMedicinesData"
+002a if-lez v10, +050h
+002e iget-object v2, v9, Lvet/pharmapedia/vetpharmapediapakistan/ui/fragments/a;->g Lwc/l;
+0032 invoke-virtual v2, Lqc/c;->j()Ll/o;
+0038 move-result-object v10
+003a invoke-virtual v1, Lcom/google/firebase/firestore/QuerySnapshot;->getDocuments()Ljava/util/List;
+0040 move-result-object v0
+0042 invoke-virtual v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0048 invoke-static v0, Lha/j;->E(Ljava/util/List;)Ljava/lang/Object;
+004e move-result-object v0
+0050 check-cast v0, Lcom/google/firebase/firestore/DocumentSnapshot;
+0054 const-class v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0058 invoke-virtual v0, v5, Lcom/google/firebase/firestore/DocumentSnapshot;->toObject(Ljava/lang/Class;)Ljava/lang/Object;
+005e move-result-object v0
+0060 check-cast v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0064 if-eqz v0, +007h
+0068 invoke-virtual v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getTimeStamp()J
+006e move-result-wide v7
+0070 goto +3h
+0072 const-wide/16 v7, 0
+0076 iget-object v10, v10, Ll/o;->h Ljava/lang/Object;
+007a check-cast v10, Landroid/content/SharedPreferences;
+007e invoke-interface v10, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+0084 move-result-object v10
+0086 const-string v0, "KEY_LAST_FETCHED"
+008a invoke-interface v10, v0, v7, v8, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String; J)Landroid/content/SharedPreferences$Editor;
+0090 move-result-object v10
+0092 invoke-interface v10, Landroid/content/SharedPreferences$Editor;->apply()V
+0098 sget-object v10, Lgb/e0;->a Lnb/d;
+009c sget-object v10, Lnb/c;->i Lnb/c;
+00a0 invoke-static v10, Lgb/w;->b(Lka/g;)Llb/c;
+00a6 move-result-object v10
+00a8 new-instance v0, Lvet/pharmapedia/vetpharmapediapakistan/ui/fragments/HomeFragment$readLatestMedicinesDataFromFirebase$1$1;
+00ac const/4 v5, 0
+00ae invoke-direct/range v0 ... v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/fragments/HomeFragment$readLatestMedicinesDataFromFirebase$1$1;-><init>(Lcom/google/firebase/firestore/QuerySnapshot; Lwc/l; Lkotlin/jvm/internal/Ref$IntRef; I Lka/c;)V
+00b4 const/4 v1, 3
+00b6 const/4 v2, 0
+00b8 invoke-static v10, v2, v0, v1, Lgb/w;->p(Lgb/v; Lka/g; Lua/p; I)Lgb/z;
+00be const-string v10, "readMedicinesData:read Done Done Done Done"
+00c2 invoke-static v6, v10, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+00c8 goto +6h
+00ca const-string v10, "readMedicinesData: no data"
+00ce invoke-static v6, v10, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+00d4 sget-object v10, Lga/p;->a Lga/p;
+00d8 return-object v10

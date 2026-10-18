@@ -1,0 +1,44 @@
+// Decompiled approximation from supplied bytecode; not original source or a tested rebuild.
+package kotlin.jvm.internal;
+public abstract class MutablePropertyReference1 extends kotlin.jvm.internal.MutablePropertyReference implements bb.j {
+
+    public bb.b computeReflected()
+    {
+        kotlin.jvm.internal.h.a.getClass();
+        return this;
+    }
+
+    public Object getDelegate(Object p2)
+    {
+        return ((kotlin.jvm.internal.MutablePropertyReference1) this.getReflected()).getDelegate(p2);
+    }
+
+    public bridge synthetic bb.h getGetter()
+    {
+        this.getGetter();
+        return 0;
+    }
+
+    public bb.i getGetter()
+    {
+        ((kotlin.jvm.internal.MutablePropertyReference1) this.getReflected()).getGetter();
+        return 0;
+    }
+
+    public bridge synthetic bb.f getSetter()
+    {
+        this.getSetter();
+        return 0;
+    }
+
+    public bb.g getSetter()
+    {
+        ((kotlin.jvm.internal.MutablePropertyReference1) this.getReflected()).getSetter();
+        return 0;
+    }
+
+    public Object invoke(Object p1)
+    {
+        return this.get(p1);
+    }
+}

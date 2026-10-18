@@ -1,0 +1,53 @@
+{
+  "scope": "Exact reviewed noncredential strings only; never credential values.",
+  "exceptions": [
+    {
+      "file_suffix": "java/com/google/firebase/FirebaseOptions.java",
+      "detector": "Secret Keyword",
+      "value_sha256": "4d54bcfcfb02e0ece02b82fe2138d209e6d5672b1c32d0f5f96b0e61d160a324",
+      "reason": "Reviewed SDK resource/header/JSON field name or validation-message constant, not credential material."
+    },
+    {
+      "file_suffix": "java/com/google/firebase/database/util/GAuthToken.java",
+      "detector": "Secret Keyword",
+      "value_sha256": "bdf49c3c3882102fc017ffb661108c63a836d065888a4093994398cc55c2ea2f",
+      "reason": "Reviewed SDK resource/header/JSON field name or validation-message constant, not credential material."
+    },
+    {
+      "file_suffix": "java/com/google/firebase/installations/FirebaseInstallations.java",
+      "detector": "Secret Keyword",
+      "value_sha256": "d2189f67596d9d6a5834d10dc2163c8d40fa6bf95e7aa0ce4f89844afb4df83c",
+      "reason": "Reviewed SDK resource/header/JSON field name or validation-message constant, not credential material."
+    },
+    {
+      "file_suffix": "java/com/google/firebase/installations/remote/FirebaseInstallationServiceClient.java",
+      "detector": "Secret Keyword",
+      "value_sha256": "92d0f52683f3d9fee9944d9a1712ad1f78909bb88ae10ec702a7149c8d75edd9",
+      "reason": "Reviewed SDK resource/header/JSON field name or validation-message constant, not credential material."
+    },
+    {
+      "file_suffix": "java/com/google/firebase/messaging/GmsRpc.java",
+      "detector": "Secret Keyword",
+      "value_sha256": "0ac5e98cf130ade6c8c70e6231f79049a287c37c720213cfbea05d1e36c69bd7",
+      "reason": "Reviewed SDK resource/header/JSON field name or validation-message constant, not credential material."
+    },
+    {
+      "file_suffix": "java/com/google/firebase/remoteconfig/internal/ConfigFetchHttpClient.java",
+      "detector": "Secret Keyword",
+      "value_sha256": "23576caf9fd34b7490484eb62d7ca30f7f87a76a9f4c7e776f83b45b74026d83",
+      "reason": "Reviewed SDK resource/header/JSON field name or validation-message constant, not credential material."
+    },
+    {
+      "file_suffix": "java/com/google/firebase/remoteconfig/internal/ConfigRealtimeHttpClient.java",
+      "detector": "Secret Keyword",
+      "value_sha256": "23576caf9fd34b7490484eb62d7ca30f7f87a76a9f4c7e776f83b45b74026d83",
+      "reason": "Reviewed SDK resource/header/JSON field name or validation-message constant, not credential material."
+    },
+    {
+      "file_suffix": "tools/pharmapedia/test_publish_source.py",
+      "detector": "Secret Keyword",
+      "value_sha256": "acd37cb07f4d22db79206adfbf56ac67f1b056d3ec9a7e2ac5d3488cd28f2b6b",
+      "reason": "Explicit synthetic, noncredential unit-test fixture."
+    }
+  ]
+}

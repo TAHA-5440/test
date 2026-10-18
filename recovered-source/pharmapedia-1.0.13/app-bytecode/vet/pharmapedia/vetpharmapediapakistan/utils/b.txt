@@ -1,0 +1,20 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+METHOD <init>(Ljava/lang/String; Ljava/lang/String;)V
+0000 invoke-virtual v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 invoke-direct v0, Ljava/lang/Object;-><init>()V
+000c iput-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->g Ljava/lang/String;
+0010 iput-object v2, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->h Ljava/lang/String;
+0014 return-void
+METHOD M()Lka/g;
+0000 sget-object v0, Lgb/e0;->a Lnb/d;
+0004 sget-object v0, Lnb/c;->i Lnb/c;
+0008 return-object v0
+METHOD a()V
+0000 new-instance v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;
+0004 const/4 v1, 0
+0006 invoke-direct v0, v3, v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/GetTranslationCoroutineScope$start$1;-><init>(Lvet/pharmapedia/vetpharmapediapakistan/utils/b; Lka/c;)V
+000c const/4 v2, 3
+000e invoke-static v3, v1, v0, v2, Lgb/w;->p(Lgb/v; Lka/g; Lua/p; I)Lgb/z;
+0014 move-result-object v0
+0016 iput-object v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->i Lgb/z;
+001a return-void

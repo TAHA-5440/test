@@ -1,0 +1,240 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/utils/a;
+METHOD a(Landroid/app/Activity; Ltc/b; Ljava/lang/String; I Ljava/lang/String; Lua/a;)V
+0000 invoke-virtual v9, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 invoke-virtual v10, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+000c invoke-virtual v11, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0012 sget-object v0, Lgb/e0;->a Lnb/d;
+0016 sget-object v0, Lnb/c;->i Lnb/c;
+001a invoke-static v0, Lgb/w;->b(Lka/g;)Llb/c;
+0020 move-result-object v0
+0022 new-instance v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;
+0026 const/4 v8, 0
+0028 move-object v5, v9
+002a move-object v2, v10
+002c move-object v3, v11
+002e move v4, v12
+0030 move-object v7, v13
+0032 move-object v6, v14
+0034 invoke-direct/range v1 ... v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;-><init>(Ltc/b; Ljava/lang/String; I Landroid/app/Activity; Lua/a; Ljava/lang/String; Lka/c;)V
+003a const/4 v9, 3
+003c const/4 v10, 0
+003e invoke-static v0, v10, v1, v9, Lgb/w;->p(Lgb/v; Lka/g; Lua/p; I)Lgb/z;
+0044 return-void
+METHOD b(Landroid/app/Activity; Ltc/b; Ljava/lang/String; I Ljava/lang/String; Lua/a;)V
+0000 invoke-virtual v9, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 invoke-virtual v10, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+000c invoke-virtual v11, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0012 sget-object v0, Lgb/e0;->a Lnb/d;
+0016 sget-object v0, Lnb/c;->i Lnb/c;
+001a invoke-static v0, Lgb/w;->b(Lka/g;)Llb/c;
+0020 move-result-object v0
+0022 new-instance v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveSaltFavourite$1;
+0026 const/4 v8, 0
+0028 move-object v5, v9
+002a move-object v2, v10
+002c move-object v3, v11
+002e move v4, v12
+0030 move-object v7, v13
+0032 move-object v6, v14
+0034 invoke-direct/range v1 ... v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveSaltFavourite$1;-><init>(Ltc/b; Ljava/lang/String; I Landroid/app/Activity; Lua/a; Ljava/lang/String; Lka/c;)V
+003a const/4 v9, 3
+003c const/4 v10, 0
+003e invoke-static v0, v10, v1, v9, Lgb/w;->p(Lgb/v; Lka/g; Lua/p; I)Lgb/z;
+0044 return-void
+METHOD c(Landroid/app/Activity;)Lk/c;
+0000 sget v0, Lxc/a;->a I
+0004 const v1, 2132017552
+000a packed-switch v0, +0000115h
+0010 new-instance v0, Lk/c;
+0014 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+001a return-object v0
+001c new-instance v0, Lk/c;
+0020 const v1, 2132017549
+0026 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+002c return-object v0
+002e new-instance v0, Lk/c;
+0032 const v1, 2132017547
+0038 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+003e return-object v0
+0040 new-instance v0, Lk/c;
+0044 const v1, 2132017546
+004a invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0050 return-object v0
+0052 new-instance v0, Lk/c;
+0056 const v1, 2132017545
+005c invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0062 return-object v0
+0064 new-instance v0, Lk/c;
+0068 const v1, 2132017544
+006e invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0074 return-object v0
+0076 new-instance v0, Lk/c;
+007a const v1, 2132017543
+0080 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0086 return-object v0
+0088 new-instance v0, Lk/c;
+008c const v1, 2132017542
+0092 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0098 return-object v0
+009a new-instance v0, Lk/c;
+009e const v1, 2132017541
+00a4 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+00aa return-object v0
+00ac new-instance v0, Lk/c;
+00b0 const v1, 2132017540
+00b6 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+00bc return-object v0
+00be new-instance v0, Lk/c;
+00c2 const v1, 2132017539
+00c8 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+00ce return-object v0
+00d0 new-instance v0, Lk/c;
+00d4 const v1, 2132017538
+00da invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+00e0 return-object v0
+00e2 new-instance v0, Lk/c;
+00e6 const v1, 2132017536
+00ec invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+00f2 return-object v0
+00f4 new-instance v0, Lk/c;
+00f8 const v1, 2132017535
+00fe invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0104 return-object v0
+0106 new-instance v0, Lk/c;
+010a const v1, 2132017534
+0110 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0116 return-object v0
+0118 new-instance v0, Lk/c;
+011c const v1, 2132017533
+0122 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0128 return-object v0
+012a new-instance v0, Lk/c;
+012e const v1, 2132017532
+0134 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+013a return-object v0
+013c new-instance v0, Lk/c;
+0140 const v1, 2132017531
+0146 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+014c return-object v0
+014e new-instance v0, Lk/c;
+0152 const v1, 2132017530
+0158 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+015e return-object v0
+0160 new-instance v0, Lk/c;
+0164 const v1, 2132017529
+016a invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0170 return-object v0
+0172 new-instance v0, Lk/c;
+0176 const v1, 2132017528
+017c invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0182 return-object v0
+0184 new-instance v0, Lk/c;
+0188 const v1, 2132017527
+018e invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0194 return-object v0
+0196 new-instance v0, Lk/c;
+019a const v1, 2132017555
+01a0 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+01a6 return-object v0
+01a8 new-instance v0, Lk/c;
+01ac const v1, 2132017554
+01b2 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+01b8 return-object v0
+01ba new-instance v0, Lk/c;
+01be const v1, 2132017553
+01c4 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+01ca return-object v0
+01cc new-instance v0, Lk/c;
+01d0 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+01d6 return-object v0
+01d8 new-instance v0, Lk/c;
+01dc const v1, 2132017551
+01e2 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+01e8 return-object v0
+01ea new-instance v0, Lk/c;
+01ee const v1, 2132017550
+01f4 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+01fa return-object v0
+01fc new-instance v0, Lk/c;
+0200 const v1, 2132017548
+0206 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+020c return-object v0
+020e new-instance v0, Lk/c;
+0212 const v1, 2132017537
+0218 invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+021e return-object v0
+0220 new-instance v0, Lk/c;
+0224 const v1, 2132017556
+022a invoke-direct v0, v2, v1, Lk/c;-><init>(Landroid/content/Context; I)V
+0230 return-object v0
+0232 nop
+0234 packed-switch-payload 0 1 2 3 4 5 6 7 8 9 a b c d e f 10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d
+METHOD d(Landroid/app/Activity; Ljava/lang/String; Ljava/lang/String;)V
+0000 const-string v0, "mailto:vetpharmapediapakistan@gmail.com?subject="
+0004 const-string v1, "
+                "
+0008 invoke-virtual v9, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+000e new-instance v2, Landroid/content/Intent;
+0012 const-string v3, "android.intent.action.SENDTO"
+0016 invoke-direct v2, v3, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+001c const v3, 2131951658
+0022 invoke-virtual v8, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+0028 move-result-object v3
+002a sget v4, Landroid/os/Build$VERSION;->SDK_INT I
+002e sget-object v5, Landroid/os/Build;->MANUFACTURER Ljava/lang/String;
+0032 sget-object v6, Landroid/os/Build;->MODEL Ljava/lang/String;
+0036 new-instance v7, Ljava/lang/StringBuilder;
+003a invoke-direct v7, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+0040 invoke-virtual v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0046 const-string v10, ": "
+004a invoke-virtual v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0050 invoke-virtual v7, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0056 const-string v10, "- App Version13
+                OS Version-"
+005a invoke-virtual v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0060 invoke-virtual v7, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+0066 const-string v10, "
+                Device Model-"
+006a invoke-virtual v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0070 invoke-virtual v7, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0076 invoke-virtual v7, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+007c invoke-virtual v7, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0082 invoke-virtual v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+0088 move-result-object v10
+008a invoke-static v10, Ldb/j;->H(Ljava/lang/String;)Ljava/lang/String;
+0090 move-result-object v10
+0092 invoke-static v10, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+0098 move-result-object v10
+009a invoke-static v9, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+00a0 move-result-object v9
+00a2 new-instance v1, Ljava/lang/StringBuilder;
+00a6 invoke-direct v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+00ac invoke-virtual v1, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00b2 const-string v10, "&body="
+00b6 invoke-virtual v1, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00bc invoke-virtual v1, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+00c2 invoke-virtual v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+00c8 move-result-object v9
+00ca invoke-static v9, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+00d0 move-result-object v9
+00d2 invoke-virtual v9, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+00d8 invoke-virtual v2, v9, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+00de const-string v9, "Send email"
+00e2 invoke-static v2, v9, Landroid/content/Intent;->createChooser(Landroid/content/Intent; Ljava/lang/CharSequence;)Landroid/content/Intent;
+00e8 move-result-object v9
+00ea invoke-virtual v8, v9, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+00f0 return-void
+00f2 move-exception v8
+00f4 invoke-virtual v8, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+00fa move-result-object v8
+00fc new-instance v9, Ljava/lang/StringBuilder;
+0100 const-string v10, "sendEmail:"
+0104 invoke-direct v9, v10, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+010a invoke-virtual v9, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0110 const-string v8, " "
+0114 invoke-virtual v9, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+011a invoke-virtual v9, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+0120 move-result-object v8
+0122 const-string v9, "emailError"
+0126 invoke-static v9, v8, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+012c return-void

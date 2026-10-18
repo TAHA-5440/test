@@ -1,0 +1,102 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;
+METHOD <init>(Ljava/lang/String; I Z)V
+0000 invoke-virtual v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 invoke-direct v0, Ljava/lang/Object;-><init>()V
+000c iput-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+0010 iput v2, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0014 iput-boolean v3, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+0018 return-void
+METHOD copy$default(Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel; Ljava/lang/String; I Z I Ljava/lang/Object;)Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;
+0000 and-int/lit8 v5, v4, 1
+0004 if-eqz v5, +004h
+0008 iget-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+000c and-int/lit8 v5, v4, 2
+0010 if-eqz v5, +004h
+0014 iget v2, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0018 and-int/lit8 v4, v4, 4
+001c if-eqz v4, +004h
+0020 iget-boolean v3, v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+0024 invoke-virtual v0, v1, v2, v3, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->copy(Ljava/lang/String; I Z)Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;
+002a move-result-object v0
+002c return-object v0
+METHOD component1()Ljava/lang/String;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+0004 return-object v0
+METHOD component2()I
+0000 iget v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0004 return v0
+METHOD component3()Z
+0000 iget-boolean v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+0004 return v0
+METHOD copy(Ljava/lang/String; I Z)Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;
+0000 invoke-virtual v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0006 new-instance v0, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;
+000a invoke-direct v0, v2, v3, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;-><init>(Ljava/lang/String; I Z)V
+0010 return-object v0
+METHOD equals(Ljava/lang/Object;)Z
+0000 const/4 v0, 1
+0002 if-ne v4, v5, +003h
+0006 return v0
+0008 instance-of v1, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;
+000c const/4 v2, 0
+000e if-nez v1, +003h
+0012 return v2
+0014 check-cast v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;
+0018 iget-object v1, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+001c iget-object v3, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+0020 invoke-static v1, v3, Lkotlin/jvm/internal/f;->a(Ljava/lang/Object; Ljava/lang/Object;)Z
+0026 move-result v1
+0028 if-nez v1, +003h
+002c return v2
+002e iget v1, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0032 iget v3, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0036 if-eq v1, v3, +003h
+003a return v2
+003c iget-boolean v1, v4, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+0040 iget-boolean v5, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+0044 if-eq v1, v5, +003h
+0048 return v2
+004a return v0
+METHOD getIcon()I
+0000 iget v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0004 return v0
+METHOD getName()Ljava/lang/String;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+0004 return-object v0
+METHOD hashCode()I
+0000 iget-object v0, v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+0004 invoke-virtual v0, Ljava/lang/String;->hashCode()I
+000a move-result v0
+000c mul-int/lit8 v0, v0, 31
+0010 iget v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0014 invoke-static v1, Ljava/lang/Integer;->hashCode(I)I
+001a move-result v1
+001c add-int/2addr v1, v0
+001e mul-int/lit8 v1, v1, 31
+0022 iget-boolean v0, v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+0026 invoke-static v0, Ljava/lang/Boolean;->hashCode(Z)I
+002c move-result v0
+002e add-int/2addr v0, v1
+0030 return v0
+METHOD isSajid()Z
+0000 iget-boolean v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+0004 return v0
+METHOD toString()Ljava/lang/String;
+0000 iget-object v0, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->name Ljava/lang/String;
+0004 iget v1, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->icon I
+0008 iget-boolean v2, v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/ContactsModel;->isSajid Z
+000c new-instance v3, Ljava/lang/StringBuilder;
+0010 const-string v4, "ContactsModel(name="
+0014 invoke-direct v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+001a invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0020 const-string v0, ", icon="
+0024 invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+002a invoke-virtual v3, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+0030 const-string v0, ", isSajid="
+0034 invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+003a invoke-virtual v3, v2, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+0040 const-string v0, ")"
+0044 invoke-virtual v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+004a invoke-virtual v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+0050 move-result-object v0
+0052 return-object v0

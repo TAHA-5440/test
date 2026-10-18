@@ -1,0 +1,34 @@
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+  <selector>
+    <item android:state_enabled="true" android:state_pressed="true">
+      <set>
+        <objectAnimator android:duration="@7F0B0035" android:valueTo="@7F0705A6" android:valueType="0" android:propertyName="translationZ"/>
+        <objectAnimator android:duration="0" android:valueTo="@7F070456" android:valueType="0" android:propertyName="elevation"/>
+      </set>
+    </item>
+    <item android:state_enabled="true" android:state_hovered="true">
+      <set>
+        <objectAnimator android:duration="@7F0B0035" android:valueTo="@7F0705A5" android:valueType="0" android:propertyName="translationZ"/>
+        <objectAnimator android:duration="0" android:valueTo="@7F070456" android:valueType="0" android:propertyName="elevation"/>
+      </set>
+    </item>
+    <item android:state_focused="true" android:state_enabled="true">
+      <set>
+        <objectAnimator android:duration="@7F0B0035" android:valueTo="@7F0705A4" android:valueType="0" android:propertyName="translationZ"/>
+        <objectAnimator android:duration="0" android:valueTo="@7F070456" android:valueType="0" android:propertyName="elevation"/>
+      </set>
+    </item>
+    <item android:state_enabled="true">
+      <set>
+        <objectAnimator android:duration="@7F0B0035" android:valueTo="@7F0705A3" android:valueType="0" android:propertyName="translationZ" android:startDelay="@7F0B0034"/>
+        <objectAnimator android:duration="0" android:valueTo="@7F070456" android:valueType="0" android:propertyName="elevation"/>
+      </set>
+    </item>
+    <item>
+      <set>
+        <objectAnimator android:duration="0" android:valueTo="@7F0705A2" android:valueType="0" android:propertyName="translationZ"/>
+        <objectAnimator android:duration="0" android:valueTo="@7F0705A1" android:valueType="0" android:propertyName="elevation"/>
+      </set>
+    </item>
+  </selector>
+</set>

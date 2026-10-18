@@ -1,0 +1,185 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;
+METHOD <init>()V
+0000 invoke-direct v2, Lqc/b;-><init>()V
+0006 const/4 v0, 0
+0008 iput-boolean v0, v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->u Z
+000c new-instance v0, Lvc/p;
+0010 const/4 v1, 1
+0012 invoke-direct v0, v2, v1, Lvc/p;-><init>(Lqc/b; I)V
+0018 invoke-virtual v2, v0, Landroidx/activity/p;->addOnContextAvailableListener(Le/b;)V
+001e return-void
+METHOD m()V
+0000 invoke-virtual v0, Landroid/app/Activity;->finish()V
+0006 return-void
+METHOD n()V
+0000 iget-boolean v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->u Z
+0004 if-nez v0, +047h
+0008 const/4 v0, 1
+000a iput-boolean v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->u Z
+000e invoke-virtual v3, Lqc/b;->a()Ljava/lang/Object;
+0014 move-result-object v0
+0016 check-cast v0, Lvc/d;
+001a check-cast v0, Lqc/f;
+001e iget-object v1, v0, Lqc/f;->b Lqc/j;
+0022 iget-object v2, v1, Lqc/j;->e Ld7/b;
+0026 invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+002c move-result-object v2
+002e check-cast v2, Lxc/g;
+0032 iput-object v2, v3, Lqc/b;->p Lxc/g;
+0036 iget-object v2, v1, Lqc/j;->f Ld7/b;
+003a invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+0040 move-result-object v2
+0042 check-cast v2, Lxc/h;
+0046 iput-object v2, v3, Lqc/b;->q Lxc/h;
+004a invoke-virtual v1, Lqc/j;->a()Ll/o;
+0050 move-result-object v2
+0052 iput-object v2, v3, Lqc/b;->r Ll/o;
+0056 iget-object v2, v1, Lqc/j;->i Ld7/b;
+005a invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+0060 move-result-object v2
+0062 check-cast v2, Ltc/b;
+0066 iput-object v2, v3, Lqc/b;->s Ltc/b;
+006a iget-object v1, v1, Lqc/j;->j Ld7/b;
+006e invoke-interface v1, Lfa/a;->get()Ljava/lang/Object;
+0074 move-result-object v1
+0076 check-cast v1, Lcom/bumptech/glide/q;
+007a iput-object v1, v3, Lqc/b;->t Lcom/bumptech/glide/q;
+007e iget-object v0, v0, Lqc/f;->f Ld7/b;
+0082 invoke-interface v0, Lfa/a;->get()Ljava/lang/Object;
+0088 move-result-object v0
+008a check-cast v0, Luc/b;
+008e iput-object v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->v Luc/b;
+0092 return-void
+METHOD onCreate(Landroid/os/Bundle;)V
+0000 invoke-super v13, v14, Lqc/b;->onCreate(Landroid/os/Bundle;)V
+0006 iget-object v14, v13, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->v Luc/b;
+000a const-string v0, "binding"
+000e const/4 v1, 0
+0010 if-eqz v14, +109h
+0014 iget-object v14, v14, Luc/b;->a Landroidx/constraintlayout/widget/ConstraintLayout;
+0018 invoke-virtual v13, v14, Lqc/b;->setContentView(Landroid/view/View;)V
+001e new-instance v14, Lrc/p;
+0022 invoke-virtual v13, Lqc/b;->l()Ll/o;
+0028 move-result-object v2
+002a invoke-virtual v13, Lqc/b;->i()Lxc/g;
+0030 move-result-object v3
+0032 invoke-virtual v13, Lqc/b;->j()Landroid/app/Activity;
+0038 move-result-object v4
+003a invoke-direct v14, v2, v3, v4, v13, Lrc/p;-><init>(Ll/o; Lxc/g; Landroid/app/Activity; Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;)V
+0040 iput-object v14, v13, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->x Lrc/p;
+0044 invoke-virtual v13, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+004a move-result-object v14
+004c if-eqz v14, +024h
+0050 invoke-virtual v14, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+0056 move-result-object v14
+0058 if-eqz v14, +01eh
+005c sget v2, Landroid/os/Build$VERSION;->SDK_INT I
+0060 const/16 v3, 33
+0064 if-lt v2, v3, +007h
+0068 invoke-static v14, Landroidx/activity/q;->i(Landroid/os/Bundle;)Ljava/io/Serializable;
+006e move-result-object v14
+0070 goto +eh
+0072 const-string v2, "MedicinesModel"
+0076 invoke-virtual v14, v2, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
+007c move-result-object v14
+007e instance-of v2, v14, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0082 if-nez v2, +003h
+0086 move-object v14, v1
+0088 check-cast v14, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+008c check-cast v14, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0090 iput-object v14, v13, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->w Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0094 iget-object v14, v13, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->w Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0098 if-eqz v14, +09dh
+009c invoke-virtual v14, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getAvailableForms()Ljava/util/Map;
+00a2 move-result-object v2
+00a4 new-instance v3, Ljava/util/HashMap;
+00a8 invoke-direct v3, Ljava/util/HashMap;-><init>()V
+00ae invoke-interface v2, Ljava/util/Map;->keySet()Ljava/util/Set;
+00b4 move-result-object v4
+00b6 invoke-interface v4, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+00bc move-result-object v4
+00be invoke-interface v4, Ljava/util/Iterator;->hasNext()Z
+00c4 move-result v5
+00c6 if-eqz v5, +04ch
+00ca invoke-interface v4, Ljava/util/Iterator;->next()Ljava/lang/Object;
+00d0 move-result-object v5
+00d2 check-cast v5, Ljava/lang/String;
+00d6 invoke-interface v2, v5, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+00dc move-result-object v6
+00de check-cast v6, Lvet/pharmapedia/vetpharmapediapakistan/database/models/AvailableFormsModel;
+00e2 new-instance v7, Lkotlin/text/Regex;
+00e6 const-string v8, "\d+$"
+00ea invoke-direct v7, v8, Lkotlin/text/Regex;-><init>(Ljava/lang/String;)V
+00f0 invoke-virtual v7, v5, Lkotlin/text/Regex;->c(Ljava/lang/String;)Ljava/lang/String;
+00f6 move-result-object v5
+00f8 invoke-static v5, Ldb/i;->o0(Ljava/lang/String;)Ljava/lang/CharSequence;
+00fe move-result-object v5
+0100 invoke-virtual v5, Ljava/lang/Object;->toString()Ljava/lang/String;
+0106 move-result-object v12
+0108 if-eqz v6, -025h
+010c new-instance v7, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayFormsDetailModel;
+0110 invoke-virtual v6, Lvet/pharmapedia/vetpharmapediapakistan/database/models/AvailableFormsModel;->getPacking()Ljava/lang/String;
+0116 move-result-object v8
+0118 invoke-virtual v6, Lvet/pharmapedia/vetpharmapediapakistan/database/models/AvailableFormsModel;->getPrice()Ljava/lang/String;
+011e move-result-object v9
+0120 invoke-virtual v6, Lvet/pharmapedia/vetpharmapediapakistan/database/models/AvailableFormsModel;->getWeight()Ljava/lang/String;
+0126 move-result-object v10
+0128 invoke-virtual v14, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getSaltName()Ljava/lang/String;
+012e move-result-object v11
+0130 invoke-direct/range v7 ... v12, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayFormsDetailModel;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+0136 invoke-virtual v3, v12, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+013c move-result-object v5
+013e check-cast v5, Ljava/util/ArrayList;
+0142 if-nez v5, +007h
+0146 new-instance v5, Ljava/util/ArrayList;
+014a invoke-direct v5, Ljava/util/ArrayList;-><init>()V
+0150 invoke-virtual v5, v7, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+0156 invoke-virtual v3, v12, v5, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+015c goto -4fh
+015e new-instance v14, Ljava/util/ArrayList;
+0162 invoke-direct v14, Ljava/util/ArrayList;-><init>()V
+0168 invoke-virtual v3, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+016e move-result-object v2
+0170 invoke-virtual v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0176 invoke-interface v2, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+017c move-result-object v2
+017e invoke-interface v2, Ljava/util/Iterator;->hasNext()Z
+0184 move-result v4
+0186 if-eqz v4, +01fh
+018a invoke-interface v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+0190 move-result-object v4
+0192 check-cast v4, Ljava/lang/String;
+0196 new-instance v5, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayFormsModel;
+019a invoke-virtual v3, v4, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+01a0 move-result-object v6
+01a2 check-cast v6, Ljava/util/ArrayList;
+01a6 if-nez v6, +007h
+01aa new-instance v6, Ljava/util/ArrayList;
+01ae invoke-direct v6, Ljava/util/ArrayList;-><init>()V
+01b4 const/4 v7, 0
+01b6 invoke-direct v5, v4, v7, v6, Lvet/pharmapedia/vetpharmapediapakistan/database/models/DisplayFormsModel;-><init>(Ljava/lang/String; Z Ljava/util/ArrayList;)V
+01bc invoke-virtual v14, v5, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+01c2 goto -22h
+01c4 iget-object v2, v13, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->x Lrc/p;
+01c8 if-eqz v2, +005h
+01cc invoke-virtual v2, v14, Lw1/e0;->l(Ljava/util/List;)V
+01d2 iget-object v14, v13, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->v Luc/b;
+01d6 if-eqz v14, +022h
+01da iget-object v0, v14, Luc/b;->c Landroidx/recyclerview/widget/RecyclerView;
+01de new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
+01e2 invoke-virtual v13, Lqc/b;->j()Landroid/app/Activity;
+01e8 invoke-direct v1, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>()V
+01ee invoke-virtual v0, v1, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Lw1/t0;)V
+01f4 iget-object v1, v13, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/AvailableFormsActivity;->x Lrc/p;
+01f8 if-eqz v1, +005h
+01fc invoke-virtual v0, v1, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lw1/k0;)V
+0202 iget-object v14, v14, Luc/b;->b Landroidx/appcompat/widget/AppCompatImageView;
+0206 new-instance v0, Lvc/a;
+020a const/4 v1, 1
+020c invoke-direct v0, v13, v1, Lvc/a;-><init>(Ljava/lang/Object; I)V
+0212 invoke-virtual v14, v0, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+0218 return-void
+021a invoke-static v0, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+0220 throw v1
+0222 invoke-static v0, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+0228 throw v1

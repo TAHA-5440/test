@@ -1,0 +1,9 @@
+<selector xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_enabled="false" android:color="?7F040121" android:alpha="@7F0704DE"/>
+  <item android:state_checked="true" android:color="?7F04012C"/>
+  <item android:color="?7F040122" android:state_hovered="true"/>
+  <item android:state_focused="true" android:color="?7F04011A"/>
+  <item android:state_pressed="true" android:color="?7F040122"/>
+  <item android:color="?7F040122" app:state_dragged="true"/>
+  <item android:color="?7F040122"/>
+</selector>

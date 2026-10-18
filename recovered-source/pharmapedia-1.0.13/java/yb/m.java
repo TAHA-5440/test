@@ -1,0 +1,163 @@
+// Decompiled approximation from supplied bytecode; not original source or a tested rebuild.
+package yb;
+public final class m {
+    public static final yb.b b;
+    public static final yb.l c;
+    public static final java.util.LinkedHashMap d;
+    public static final yb.m e;
+    public static final yb.m f;
+    public static final yb.m g;
+    public static final yb.m h;
+    public static final yb.m i;
+    public static final yb.m j;
+    public static final yb.m k;
+    public static final yb.m l;
+    public static final yb.m m;
+    public static final yb.m n;
+    public static final yb.m o;
+    public static final yb.m p;
+    public static final yb.m q;
+    public static final yb.m r;
+    public static final yb.m s;
+    public static final yb.m t;
+    public final String a;
+
+    static m()
+    {
+        yb.b v0_1 = new yb.b();
+        yb.m.b = v0_1;
+        yb.m.c = new yb.l();
+        yb.m.d = new java.util.LinkedHashMap();
+        yb.b.a(v0_1, "SSL_RSA_WITH_NULL_MD5");
+        yb.b.a(v0_1, "SSL_RSA_WITH_NULL_SHA");
+        yb.b.a(v0_1, "SSL_RSA_EXPORT_WITH_RC4_40_MD5");
+        yb.b.a(v0_1, "SSL_RSA_WITH_RC4_128_MD5");
+        yb.b.a(v0_1, "SSL_RSA_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "SSL_RSA_EXPORT_WITH_DES40_CBC_SHA");
+        yb.b.a(v0_1, "SSL_RSA_WITH_DES_CBC_SHA");
+        yb.m.e = yb.b.a(v0_1, "SSL_RSA_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DHE_DSS_WITH_DES_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DHE_RSA_WITH_DES_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DH_anon_EXPORT_WITH_RC4_40_MD5");
+        yb.b.a(v0_1, "SSL_DH_anon_WITH_RC4_128_MD5");
+        yb.b.a(v0_1, "SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DH_anon_WITH_DES_CBC_SHA");
+        yb.b.a(v0_1, "SSL_DH_anon_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "TLS_KRB5_WITH_DES_CBC_SHA");
+        yb.b.a(v0_1, "TLS_KRB5_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "TLS_KRB5_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "TLS_KRB5_WITH_DES_CBC_MD5");
+        yb.b.a(v0_1, "TLS_KRB5_WITH_3DES_EDE_CBC_MD5");
+        yb.b.a(v0_1, "TLS_KRB5_WITH_RC4_128_MD5");
+        yb.b.a(v0_1, "TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA");
+        yb.b.a(v0_1, "TLS_KRB5_EXPORT_WITH_RC4_40_SHA");
+        yb.b.a(v0_1, "TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5");
+        yb.b.a(v0_1, "TLS_KRB5_EXPORT_WITH_RC4_40_MD5");
+        yb.m.f = yb.b.a(v0_1, "TLS_RSA_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DH_anon_WITH_AES_128_CBC_SHA");
+        yb.m.g = yb.b.a(v0_1, "TLS_RSA_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DH_anon_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_RSA_WITH_NULL_SHA256");
+        yb.b.a(v0_1, "TLS_RSA_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_RSA_WITH_AES_256_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_RSA_WITH_CAMELLIA_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_AES_256_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_DH_anon_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_DH_anon_WITH_AES_256_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_RSA_WITH_CAMELLIA_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_PSK_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "TLS_PSK_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "TLS_PSK_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_PSK_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_RSA_WITH_SEED_CBC_SHA");
+        yb.m.h = yb.b.a(v0_1, "TLS_RSA_WITH_AES_128_GCM_SHA256");
+        yb.m.i = yb.b.a(v0_1, "TLS_RSA_WITH_AES_256_GCM_SHA384");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_AES_128_GCM_SHA256");
+        yb.b.a(v0_1, "TLS_DHE_DSS_WITH_AES_256_GCM_SHA384");
+        yb.b.a(v0_1, "TLS_DH_anon_WITH_AES_128_GCM_SHA256");
+        yb.b.a(v0_1, "TLS_DH_anon_WITH_AES_256_GCM_SHA384");
+        yb.b.a(v0_1, "TLS_EMPTY_RENEGOTIATION_INFO_SCSV");
+        yb.b.a(v0_1, "TLS_FALLBACK_SCSV");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_NULL_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_NULL_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_NULL_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_NULL_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA");
+        yb.m.j = yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA");
+        yb.m.k = yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_anon_WITH_NULL_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_anon_WITH_RC4_128_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_anon_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDH_anon_WITH_AES_256_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384");
+        yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384");
+        yb.m.l = yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256");
+        yb.m.m = yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256");
+        yb.b.a(v0_1, "TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384");
+        yb.m.n = yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256");
+        yb.m.o = yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256");
+        yb.b.a(v0_1, "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384");
+        yb.b.a(v0_1, "TLS_ECDHE_PSK_WITH_AES_128_CBC_SHA");
+        yb.b.a(v0_1, "TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA");
+        yb.m.p = yb.b.a(v0_1, "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256");
+        yb.m.q = yb.b.a(v0_1, "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256");
+        yb.b.a(v0_1, "TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256");
+        yb.b.a(v0_1, "TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256");
+        yb.m.r = yb.b.a(v0_1, "TLS_AES_128_GCM_SHA256");
+        yb.m.s = yb.b.a(v0_1, "TLS_AES_256_GCM_SHA384");
+        yb.m.t = yb.b.a(v0_1, "TLS_CHACHA20_POLY1305_SHA256");
+        yb.b.a(v0_1, "TLS_AES_128_CCM_SHA256");
+        yb.b.a(v0_1, "TLS_AES_128_CCM_8_SHA256");
+        return;
+    }
+
+    public m(String p1)
+    {
+        this.a = p1;
+        return;
+    }
+
+    public final String toString()
+    {
+        return this.a;
+    }
+}

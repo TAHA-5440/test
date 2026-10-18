@@ -1,0 +1,9 @@
+androguard==4.1.4
+pyelftools==0.33
+capstone==5.0.9
+unicorn==2.1.4
+pycryptodome==4.0.1
+lz4==4.4.5
+zstandard==0.25.0
+sqlcipher3-binary==0.6.0
+Pillow==13.0.0

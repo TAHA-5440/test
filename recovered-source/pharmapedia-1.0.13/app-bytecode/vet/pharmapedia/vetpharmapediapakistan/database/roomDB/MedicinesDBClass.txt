@@ -1,0 +1,5 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/database/roomDB/MedicinesDBClass;
+METHOD <init>()V
+0000 invoke-direct v0, Landroidx/room/RoomDatabase;-><init>()V
+0006 return-void
+METHOD b()Ltc/e;

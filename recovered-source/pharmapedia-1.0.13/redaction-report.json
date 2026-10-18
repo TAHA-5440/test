@@ -1,0 +1,25 @@
+{
+  "scope": "Recognized credential patterns and named client settings; not a guarantee against every encoded secret",
+  "files": [
+    {
+      "file": "resources/strings/default.xml",
+      "counts": {
+        "google-api-key": 1,
+        "named-xml-configuration": 1
+      }
+    },
+    {
+      "file": "classes.dex-source.zip!/bytecode/com/onesignal/notifications/internal/registration/impl/PushRegistratorFCM.txt",
+      "counts": {
+        "base64-encoded-credential": 2
+      }
+    },
+    {
+      "file": "classes.dex-source.zip!/java/com/onesignal/notifications/internal/registration/impl/PushRegistratorFCM.java",
+      "counts": {
+        "base64-encoded-credential": 2
+      }
+    }
+  ],
+  "unredacted_recognized_credentials_included": false
+}

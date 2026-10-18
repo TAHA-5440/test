@@ -1,0 +1,79 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;
+METHOD <init>(Ltc/b; Ljava/lang/String; I Landroid/app/Activity; Lua/a; Ljava/lang/String; Lka/c;)V
+0000 iput-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->h Ltc/b;
+0004 iput-object v2, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->i Ljava/lang/String;
+0008 iput v3, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->j I
+000c iput-object v4, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->k Landroid/app/Activity;
+0010 iput-object v5, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->l Lua/a;
+0014 iput-object v6, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->m Ljava/lang/String;
+0018 const/4 v1, 2
+001a invoke-direct v0, v1, v7, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(I Lka/c;)V
+0020 return-void
+METHOD create(Ljava/lang/Object; Lka/c;)Lka/c;
+0000 new-instance v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;
+0004 iget-object v5, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->l Lua/a;
+0008 iget-object v6, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->m Ljava/lang/String;
+000c iget-object v1, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->h Ltc/b;
+0010 iget-object v2, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->i Ljava/lang/String;
+0014 iget v3, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->j I
+0018 iget-object v4, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->k Landroid/app/Activity;
+001c move-object v7, v10
+001e invoke-direct/range v0 ... v7, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;-><init>(Ltc/b; Ljava/lang/String; I Landroid/app/Activity; Lua/a; Ljava/lang/String; Lka/c;)V
+0024 return-object v0
+METHOD invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+0000 check-cast v1, Lgb/v;
+0004 check-cast v2, Lka/c;
+0008 invoke-virtual v0, v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->create(Ljava/lang/Object; Lka/c;)Lka/c;
+000e move-result-object v1
+0010 check-cast v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;
+0014 sget-object v2, Lga/p;->a Lga/p;
+0018 invoke-virtual v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+001e move-result-object v1
+0020 return-object v1
+METHOD invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+0000 sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->g Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+0004 iget v1, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->g I
+0008 const/4 v2, 0
+000a sget-object v3, Lga/p;->a Lga/p;
+000e const/4 v4, 2
+0010 const/4 v5, 1
+0012 if-eqz v1, +014h
+0016 if-eq v1, v5, +00eh
+001a if-ne v1, v4, +006h
+001e invoke-static v9, Lkotlin/b;->b(Ljava/lang/Object;)V
+0024 return-object v3
+0026 const-string v9, "call to 'resume' before 'invoke' with coroutine"
+002a invoke-static v9, Lcom/onesignal/notifications/internal/badges/impl/shortcutbadger/impl/a;->w(Ljava/lang/String;)V
+0030 return-object v2
+0032 invoke-static v9, Lkotlin/b;->b(Ljava/lang/Object;)V
+0038 goto +21h
+003a invoke-static v9, Lkotlin/b;->b(Ljava/lang/Object;)V
+0040 iput v5, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->g I
+0044 iget-object v9, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->h Ltc/b;
+0048 iget-object v9, v9, Ltc/b;->a Ltc/e;
+004c iget-object v9, v9, Ltc/e;->a Landroidx/room/RoomDatabase;
+0050 new-instance v1, Ltc/c;
+0054 iget v6, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->j I
+0058 iget-object v7, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->i Ljava/lang/String;
+005c invoke-direct v1, v6, v7, v5, Ltc/c;-><init>(I Ljava/lang/String; I)V
+0062 const/4 v6, 0
+0064 invoke-static v9, v8, v1, v6, v5, Landroidx/room/util/a;->c(Landroidx/room/RoomDatabase; Lka/c; Lua/l; Z Z)Ljava/lang/Object;
+006a move-result-object v9
+006c if-ne v9, v0, +003h
+0070 goto +2h
+0072 move-object v9, v3
+0074 if-ne v9, v0, +003h
+0078 goto +18h
+007a sget-object v9, Lgb/e0;->a Lnb/d;
+007e sget-object v9, Llb/k;->a Lhb/d;
+0082 new-instance v1, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1$1;
+0086 iget-object v5, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->l Lua/a;
+008a iget-object v6, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->m Ljava/lang/String;
+008e iget-object v7, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->k Landroid/app/Activity;
+0092 invoke-direct v1, v7, v5, v6, v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1$1;-><init>(Landroid/app/Activity; Lua/a; Ljava/lang/String; Lka/c;)V
+0098 iput v4, v8, Lvet/pharmapedia/vetpharmapediapakistan/utils/Constants$Companion$addOrRemoveBrandsFavourite$1;->g I
+009c invoke-static v9, v1, v8, Lgb/w;->z(Lka/g; Lua/p; Lka/c;)Ljava/lang/Object;
+00a2 move-result-object v9
+00a4 if-ne v9, v0, +003h
+00a8 return-object v0
+00aa return-object v3

@@ -1,0 +1,38 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;
+METHOD create(Ljava/lang/Object; Lka/c;)Lka/c;
+0000 new-instance v2, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;
+0004 const/4 v0, 2
+0006 invoke-direct v2, v0, v3, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(I Lka/c;)V
+000c return-object v2
+METHOD invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+0000 check-cast v1, Lgb/v;
+0004 check-cast v2, Lka/c;
+0008 invoke-virtual v0, v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;->create(Ljava/lang/Object; Lka/c;)Lka/c;
+000e move-result-object v1
+0010 check-cast v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;
+0014 sget-object v2, Lga/p;->a Lga/p;
+0018 invoke-virtual v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+001e move-result-object v1
+0020 return-object v1
+METHOD invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+0000 sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->g Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+0004 iget v1, v3, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;->g I
+0008 const/4 v2, 1
+000a if-eqz v1, +00fh
+000e if-ne v1, v2, +006h
+0012 invoke-static v4, Lkotlin/b;->b(Ljava/lang/Object;)V
+0018 goto +18h
+001a const-string v4, "call to 'resume' before 'invoke' with coroutine"
+001e invoke-static v4, Lcom/onesignal/notifications/internal/badges/impl/shortcutbadger/impl/a;->w(Ljava/lang/String;)V
+0024 const/4 v4, 0
+0026 return-object v4
+0028 invoke-static v4, Lkotlin/b;->b(Ljava/lang/Object;)V
+002e invoke-static Lcom/onesignal/OneSignal;->getNotifications()Lcom/onesignal/notifications/INotificationsManager;
+0034 move-result-object v4
+0036 iput v2, v3, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass$setUpOneSignalNotification$1;->g I
+003a invoke-interface v4, v2, v3, Lcom/onesignal/notifications/INotificationsManager;->requestPermission(Z Lka/c;)Ljava/lang/Object;
+0040 move-result-object v4
+0042 if-ne v4, v0, +003h
+0046 return-object v0
+0048 sget-object v4, Lga/p;->a Lga/p;
+004c return-object v4

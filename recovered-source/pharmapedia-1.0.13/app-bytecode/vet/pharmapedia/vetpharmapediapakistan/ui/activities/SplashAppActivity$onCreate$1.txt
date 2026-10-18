@@ -1,0 +1,84 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;
+METHOD <init>(Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity; Lka/c;)V
+0000 iput-object v1, v0, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;->h Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity;
+0004 const/4 v1, 2
+0006 invoke-direct v0, v1, v2, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(I Lka/c;)V
+000c return-void
+METHOD create(Ljava/lang/Object; Lka/c;)Lka/c;
+0000 new-instance v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;
+0004 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;->h Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity;
+0008 invoke-direct v2, v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;-><init>(Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity; Lka/c;)V
+000e return-object v2
+METHOD invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+0000 check-cast v1, Lgb/v;
+0004 check-cast v2, Lka/c;
+0008 invoke-virtual v0, v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;->create(Ljava/lang/Object; Lka/c;)Lka/c;
+000e move-result-object v1
+0010 check-cast v1, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;
+0014 sget-object v2, Lga/p;->a Lga/p;
+0018 invoke-virtual v1, v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+001e move-result-object v1
+0020 return-object v1
+METHOD invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+0000 sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->g Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+0004 iget v1, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;->g I
+0008 const/4 v2, 0
+000a sget-object v3, Lga/p;->a Lga/p;
+000e const/4 v4, 1
+0010 if-eqz v1, +00eh
+0014 if-ne v1, v4, +006h
+0018 invoke-static v8, Lkotlin/b;->b(Ljava/lang/Object;)V
+001e goto +24h
+0020 const-string v8, "call to 'resume' before 'invoke' with coroutine"
+0024 invoke-static v8, Lcom/onesignal/notifications/internal/badges/impl/shortcutbadger/impl/a;->w(Ljava/lang/String;)V
+002a return-object v2
+002c invoke-static v8, Lkotlin/b;->b(Ljava/lang/Object;)V
+0032 sget-object v8, Leb/a;->h Lea/c;
+0036 const/4 v8, 5
+0038 sget-object v1, Lkotlin/time/DurationUnit;->j Lkotlin/time/DurationUnit;
+003c invoke-static v8, v1, Ljc/g;->v(I Lkotlin/time/DurationUnit;)J
+0042 move-result-wide v5
+0044 iput v4, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;->g I
+0048 invoke-static v5, v6, Lgb/w;->w(J)J
+004e move-result-wide v5
+0050 invoke-static v5, v6, v7, Lgb/w;->h(J Lka/c;)Ljava/lang/Object;
+0056 move-result-object v8
+0058 if-ne v8, v0, +003h
+005c goto +2h
+005e move-object v8, v3
+0060 if-ne v8, v0, +003h
+0064 return-object v0
+0066 iget-object v8, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity$onCreate$1;->h Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity;
+006a iget-boolean v0, v8, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity;->w Z
+006e if-nez v0, +043h
+0072 iput-boolean v4, v8, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/SplashAppActivity;->w Z
+0076 const-string v0, "Request_Main"
+007a sget-object v1, Lcom/bumptech/glide/k;->b Lcom/google/firebase/analytics/FirebaseAnalytics;
+007e if-nez v1, +00fh
+0082 sget-object v1, Lvet/pharmapedia/vetpharmapediapakistan/MyAppClass;->k Landroid/content/Context;
+0086 if-eqz v1, +00bh
+008a invoke-static v1, Lcom/google/firebase/analytics/FirebaseAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/firebase/analytics/FirebaseAnalytics;
+0090 move-result-object v1
+0092 invoke-virtual v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+0098 sput-object v1, Lcom/bumptech/glide/k;->b Lcom/google/firebase/analytics/FirebaseAnalytics;
+009c sget-object v1, Lcom/bumptech/glide/k;->b Lcom/google/firebase/analytics/FirebaseAnalytics;
+00a0 if-eqz v1, +013h
+00a4 invoke-static v0, Ldb/i;->o0(Ljava/lang/String;)Ljava/lang/CharSequence;
+00aa move-result-object v0
+00ac invoke-virtual v0, Ljava/lang/Object;->toString()Ljava/lang/String;
+00b2 move-result-object v0
+00b4 new-instance v2, Landroid/os/Bundle;
+00b8 invoke-direct v2, Landroid/os/Bundle;-><init>()V
+00be invoke-virtual v1, v0, v2, Lcom/google/firebase/analytics/FirebaseAnalytics;->logEvent(Ljava/lang/String; Landroid/os/Bundle;)V
+00c4 goto +7h
+00c6 const-string v0, "firebaseAnalytics"
+00ca invoke-static v0, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+00d0 throw v2
+00d2 new-instance v0, Landroid/content/Intent;
+00d6 invoke-virtual v8, Lqc/b;->j()Landroid/app/Activity;
+00dc move-result-object v1
+00de const-class v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/MainActivity;
+00e2 invoke-direct v0, v1, v2, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+00e8 invoke-virtual v8, v0, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+00ee invoke-virtual v8, Landroid/app/Activity;->finish()V
+00f4 return-object v3

@@ -1,0 +1,305 @@
+CLASS Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;
+METHOD <init>()V
+0000 invoke-direct v2, Lqc/b;-><init>()V
+0006 const/4 v0, 0
+0008 iput-boolean v0, v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->u Z
+000c new-instance v0, Lvc/p;
+0010 const/4 v1, 3
+0012 invoke-direct v0, v2, v1, Lvc/p;-><init>(Lqc/b; I)V
+0018 invoke-virtual v2, v0, Landroidx/activity/p;->addOnContextAvailableListener(Le/b;)V
+001e return-void
+METHOD m()V
+0000 invoke-virtual v0, Landroid/app/Activity;->finish()V
+0006 return-void
+METHOD n()V
+0000 iget-boolean v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->u Z
+0004 if-nez v0, +047h
+0008 const/4 v0, 1
+000a iput-boolean v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->u Z
+000e invoke-virtual v3, Lqc/b;->a()Ljava/lang/Object;
+0014 move-result-object v0
+0016 check-cast v0, Lvc/j;
+001a check-cast v0, Lqc/f;
+001e iget-object v1, v0, Lqc/f;->b Lqc/j;
+0022 iget-object v2, v1, Lqc/j;->e Ld7/b;
+0026 invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+002c move-result-object v2
+002e check-cast v2, Lxc/g;
+0032 iput-object v2, v3, Lqc/b;->p Lxc/g;
+0036 iget-object v2, v1, Lqc/j;->f Ld7/b;
+003a invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+0040 move-result-object v2
+0042 check-cast v2, Lxc/h;
+0046 iput-object v2, v3, Lqc/b;->q Lxc/h;
+004a invoke-virtual v1, Lqc/j;->a()Ll/o;
+0050 move-result-object v2
+0052 iput-object v2, v3, Lqc/b;->r Ll/o;
+0056 iget-object v2, v1, Lqc/j;->i Ld7/b;
+005a invoke-interface v2, Lfa/a;->get()Ljava/lang/Object;
+0060 move-result-object v2
+0062 check-cast v2, Ltc/b;
+0066 iput-object v2, v3, Lqc/b;->s Ltc/b;
+006a iget-object v1, v1, Lqc/j;->j Ld7/b;
+006e invoke-interface v1, Lfa/a;->get()Ljava/lang/Object;
+0074 move-result-object v1
+0076 check-cast v1, Lcom/bumptech/glide/q;
+007a iput-object v1, v3, Lqc/b;->t Lcom/bumptech/glide/q;
+007e iget-object v0, v0, Lqc/f;->h Ld7/b;
+0082 invoke-interface v0, Lfa/a;->get()Ljava/lang/Object;
+0088 move-result-object v0
+008a check-cast v0, Luc/d;
+008e iput-object v0, v3, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->v Luc/d;
+0092 return-void
+METHOD onCreate(Landroid/os/Bundle;)V
+0000 invoke-super v5, v6, Lqc/b;->onCreate(Landroid/os/Bundle;)V
+0006 invoke-virtual v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->p()Luc/d;
+000c move-result-object v6
+000e iget-object v6, v6, Luc/d;->a Landroidx/constraintlayout/widget/ConstraintLayout;
+0012 invoke-virtual v5, v6, Lqc/b;->setContentView(Landroid/view/View;)V
+0018 invoke-virtual v5, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+001e move-result-object v6
+0020 const/4 v0, 0
+0022 if-eqz v6, +02ch
+0026 invoke-virtual v6, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+002c move-result-object v6
+002e if-eqz v6, +026h
+0032 sget v1, Landroid/os/Build$VERSION;->SDK_INT I
+0036 const/16 v2, 33
+003a if-lt v1, v2, +007h
+003e invoke-static v6, Landroidx/activity/q;->i(Landroid/os/Bundle;)Ljava/io/Serializable;
+0044 move-result-object v1
+0046 goto +eh
+0048 const-string v1, "MedicinesModel"
+004c invoke-virtual v6, v1, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
+0052 move-result-object v1
+0054 instance-of v2, v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0058 if-nez v2, +003h
+005c const/4 v1, 0
+005e check-cast v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0062 check-cast v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0066 iput-object v1, v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->w Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+006a const-string v1, "brandSelected"
+006e invoke-virtual v6, v1, v0, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String; Z)Z
+0074 move-result v6
+0076 iput-boolean v6, v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->x Z
+007a invoke-virtual v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->p()Luc/d;
+0080 move-result-object v6
+0082 iget-object v1, v6, Luc/d;->g Landroidx/appcompat/widget/AppCompatImageView;
+0086 iget-object v2, v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->w Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+008a if-eqz v2, +07dh
+008e iget-object v3, v6, Luc/d;->p Landroidx/appcompat/widget/AppCompatTextView;
+0092 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getOverview()Ljava/lang/String;
+0098 move-result-object v4
+009a invoke-virtual v3, v4, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+00a0 iget-object v3, v6, Luc/d;->j Landroidx/appcompat/widget/AppCompatTextView;
+00a4 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getIndications()Ljava/lang/String;
+00aa move-result-object v4
+00ac invoke-virtual v3, v4, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+00b2 iget-object v3, v6, Luc/d;->c Landroidx/appcompat/widget/AppCompatTextView;
+00b6 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getContraIndications()Ljava/lang/String;
+00bc move-result-object v4
+00be invoke-virtual v3, v4, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+00c4 iget-boolean v3, v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->x Z
+00c8 iget-object v4, v6, Luc/d;->m Landroidx/appcompat/widget/AppCompatTextView;
+00cc if-eqz v3, +00ah
+00d0 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getBrandName()Ljava/lang/String;
+00d6 move-result-object v3
+00d8 invoke-virtual v4, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+00de goto +8h
+00e0 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getSaltName()Ljava/lang/String;
+00e6 move-result-object v3
+00e8 invoke-virtual v4, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+00ee invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->isBrandFavourite()Z
+00f4 move-result v3
+00f6 const v4, 2131231274
+00fc if-eqz v3, +00ah
+0100 iget-boolean v3, v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->x Z
+0104 if-eqz v3, +006h
+0108 invoke-virtual v1, v4, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
+010e goto +11h
+0110 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->isSaltFavourite()Z
+0116 move-result v3
+0118 if-eqz v3, +006h
+011c invoke-virtual v1, v4, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
+0122 goto +7h
+0124 const v3, 2131230840
+012a invoke-virtual v1, v3, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
+0130 new-instance v3, Lp5/j;
+0134 const/16 v4, 8
+0138 invoke-direct v3, v4, v5, v2, Lp5/j;-><init>(I Ljava/lang/Object; Ljava/lang/Object;)V
+013e invoke-virtual v1, v3, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+0144 iget-object v1, v6, Luc/d;->n Landroidx/constraintlayout/widget/ConstraintLayout;
+0148 new-instance v3, Lvc/g;
+014c invoke-direct v3, v0, v6, v2, v5, Lvc/g;-><init>(I Luc/d; Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel; Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;)V
+0152 invoke-virtual v1, v3, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+0158 iget-object v0, v6, Luc/d;->i Landroidx/constraintlayout/widget/ConstraintLayout;
+015c new-instance v1, Lvc/g;
+0160 const/4 v3, 1
+0162 invoke-direct v1, v3, v6, v2, v5, Lvc/g;-><init>(I Luc/d; Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel; Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;)V
+0168 invoke-virtual v0, v1, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+016e iget-object v0, v6, Luc/d;->b Landroidx/constraintlayout/widget/ConstraintLayout;
+0172 new-instance v1, Lvc/g;
+0176 const/4 v3, 2
+0178 invoke-direct v1, v3, v6, v2, v5, Lvc/g;-><init>(I Luc/d; Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel; Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;)V
+017e invoke-virtual v0, v1, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+0184 iget-object v6, v6, Luc/d;->h Landroidx/appcompat/widget/AppCompatImageView;
+0188 new-instance v0, Lvc/a;
+018c const/4 v1, 3
+018e invoke-direct v0, v5, v1, Lvc/a;-><init>(Ljava/lang/Object; I)V
+0194 invoke-virtual v6, v0, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+019a invoke-virtual v5, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->q()V
+01a0 return-void
+METHOD onPause()V
+0000 invoke-super v2, Landroidx/fragment/app/n0;->onPause()V
+0006 iget-object v0, v2, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->B Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+000a if-eqz v0, +00ah
+000e iget-object v0, v0, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->i Lgb/z;
+0012 if-eqz v0, +006h
+0016 const/4 v1, 0
+0018 invoke-virtual v0, v1, Lgb/a1;->h(Ljava/util/concurrent/CancellationException;)V
+001e return-void
+METHOD p()Luc/d;
+0000 iget-object v0, v1, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->v Luc/d;
+0004 if-eqz v0, +003h
+0008 return-object v0
+000a const-string v0, "binding"
+000e invoke-static v0, Lkotlin/jvm/internal/f;->i(Ljava/lang/String;)V
+0014 const/4 v0, 0
+0016 throw v0
+METHOD q()V
+0000 invoke-virtual v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->p()Luc/d;
+0006 move-result-object v0
+0008 invoke-virtual v7, Lqc/b;->i()Lxc/g;
+000e move-result-object v1
+0010 invoke-virtual v1, Lxc/g;->a()Z
+0016 move-result v1
+0018 const/4 v2, 1
+001a const/4 v3, 0
+001c const-string v4, "en"
+0020 if-eqz v1, +0a8h
+0024 invoke-virtual v7, Lqc/b;->l()Ll/o;
+002a move-result-object v1
+002c invoke-virtual v1, Ll/o;->A()Ljava/lang/String;
+0032 move-result-object v1
+0034 invoke-static v1, v4, Lkotlin/jvm/internal/f;->a(Ljava/lang/Object; Ljava/lang/Object;)Z
+003a move-result v1
+003c if-nez v1, +09ah
+0040 invoke-virtual v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->p()Luc/d;
+0046 move-result-object v0
+0048 iget-object v1, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->w Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+004c if-eqz v1, +02ch
+0050 iget-boolean v4, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->y Z
+0054 if-eqz v4, +007h
+0058 iget-object v4, v0, Luc/d;->t Landroid/widget/ProgressBar;
+005c invoke-virtual v4, v3, Landroid/view/View;->setVisibility(I)V
+0062 new-instance v4, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+0066 invoke-virtual v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getOverview()Ljava/lang/String;
+006c move-result-object v5
+006e invoke-virtual v7, Lqc/b;->l()Ll/o;
+0074 move-result-object v6
+0076 invoke-virtual v6, Ll/o;->A()Ljava/lang/String;
+007c move-result-object v6
+007e invoke-static v6, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+0084 move-result-object v6
+0086 invoke-direct v4, v5, v6, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+008c iput-object v4, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->B Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+0090 new-instance v5, Lvc/f;
+0094 invoke-direct v5, v2, v0, v1, v7, Lvc/f;-><init>(I Luc/d; Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel; Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;)V
+009a iput-object v5, v4, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->j Lua/l;
+009e invoke-virtual v4, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->a()V
+00a4 invoke-virtual v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->p()Luc/d;
+00aa move-result-object v0
+00ac iget-object v1, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->w Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+00b0 if-eqz v1, +02ch
+00b4 iget-boolean v2, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->z Z
+00b8 if-eqz v2, +007h
+00bc iget-object v2, v0, Luc/d;->s Landroid/widget/ProgressBar;
+00c0 invoke-virtual v2, v3, Landroid/view/View;->setVisibility(I)V
+00c6 new-instance v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+00ca invoke-virtual v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getIndications()Ljava/lang/String;
+00d0 move-result-object v4
+00d2 invoke-virtual v7, Lqc/b;->l()Ll/o;
+00d8 move-result-object v5
+00da invoke-virtual v5, Ll/o;->A()Ljava/lang/String;
+00e0 move-result-object v5
+00e2 invoke-static v5, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+00e8 move-result-object v5
+00ea invoke-direct v2, v4, v5, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+00f0 iput-object v2, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->B Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+00f4 new-instance v4, Lvc/f;
+00f8 invoke-direct v4, v3, v0, v1, v7, Lvc/f;-><init>(I Luc/d; Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel; Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;)V
+00fe iput-object v4, v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->j Lua/l;
+0102 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->a()V
+0108 invoke-virtual v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->p()Luc/d;
+010e move-result-object v0
+0110 iget-object v1, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->w Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;
+0114 if-eqz v1, +096h
+0118 iget-boolean v2, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->z Z
+011c if-eqz v2, +007h
+0120 iget-object v2, v0, Luc/d;->r Landroid/widget/ProgressBar;
+0124 invoke-virtual v2, v3, Landroid/view/View;->setVisibility(I)V
+012a new-instance v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+012e invoke-virtual v1, Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel;->getContraIndications()Ljava/lang/String;
+0134 move-result-object v3
+0136 invoke-virtual v7, Lqc/b;->l()Ll/o;
+013c move-result-object v4
+013e invoke-virtual v4, Ll/o;->A()Ljava/lang/String;
+0144 move-result-object v4
+0146 invoke-static v4, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+014c move-result-object v4
+014e invoke-direct v2, v3, v4, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+0154 iput-object v2, v7, Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;->B Lvet/pharmapedia/vetpharmapediapakistan/utils/b;
+0158 new-instance v3, Lvc/f;
+015c const/4 v4, 2
+015e invoke-direct v3, v4, v0, v1, v7, Lvc/f;-><init>(I Luc/d; Lvet/pharmapedia/vetpharmapediapakistan/database/models/MedicinesRoomDBModel; Lvet/pharmapedia/vetpharmapediapakistan/ui/activities/ContraindicationsActivity;)V
+0164 iput-object v3, v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->j Lua/l;
+0168 invoke-virtual v2, Lvet/pharmapedia/vetpharmapediapakistan/utils/b;->a()V
+016e return-void
+0170 invoke-virtual v7, Lqc/b;->i()Lxc/g;
+0176 move-result-object v1
+0178 invoke-virtual v1, Lxc/g;->a()Z
+017e move-result v1
+0180 if-nez v1, +060h
+0184 invoke-virtual v7, Lqc/b;->l()Ll/o;
+018a move-result-object v1
+018c invoke-virtual v1, Ll/o;->A()Ljava/lang/String;
+0192 move-result-object v1
+0194 invoke-static v1, v4, Lkotlin/jvm/internal/f;->a(Ljava/lang/Object; Ljava/lang/Object;)Z
+019a move-result v1
+019c if-nez v1, +052h
+01a0 iget-object v0, v0, Luc/d;->f Landroid/view/View;
+01a4 const v1, 2131951819
+01aa invoke-virtual v7, v1, Landroid/content/Context;->getString(I)Ljava/lang/String;
+01b0 move-result-object v1
+01b2 invoke-static v0, v1, Lp5/k;->f(Landroid/view/View; Ljava/lang/String;)Lp5/k;
+01b8 move-result-object v0
+01ba iget-object v1, v0, Lp5/i;->i Lp5/h;
+01be invoke-virtual v7, Lqc/b;->j()Landroid/app/Activity;
+01c4 move-result-object v4
+01c6 new-instance v5, Landroid/util/TypedValue;
+01ca invoke-direct v5, Landroid/util/TypedValue;-><init>()V
+01d0 invoke-virtual v4, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+01d6 move-result-object v4
+01d8 const v6, 2130969682
+01de invoke-virtual v4, v6, v5, v2, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+01e4 iget v2, v5, Landroid/util/TypedValue;->data I
+01e8 invoke-virtual v1, v3, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+01ee move-result-object v4
+01f0 check-cast v4, Lcom/google/android/material/snackbar/SnackbarContentLayout;
+01f4 invoke-virtual v4, Lcom/google/android/material/snackbar/SnackbarContentLayout;->getActionView()Landroid/widget/Button;
+01fa move-result-object v4
+01fc invoke-virtual v4, v2, Landroid/widget/TextView;->setTextColor(I)V
+0202 invoke-virtual v1, v3, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+0208 move-result-object v2
+020a check-cast v2, Lcom/google/android/material/snackbar/SnackbarContentLayout;
+020e invoke-virtual v2, Lcom/google/android/material/snackbar/SnackbarContentLayout;->getMessageView()Landroid/widget/TextView;
+0214 move-result-object v2
+0216 const/16 v4, 10
+021a invoke-virtual v2, v4, Landroid/widget/TextView;->setMaxLines(I)V
+0220 invoke-virtual v1, v3, Lp5/h;->setAnimationMode(I)V
+0226 new-instance v1, Lp5/j;
+022a const/16 v2, 9
+022e invoke-direct v1, v2, v0, v7, Lp5/j;-><init>(I Ljava/lang/Object; Ljava/lang/Object;)V
+0234 invoke-virtual v0, v1, Lp5/k;->g(Landroid/view/View$OnClickListener;)V
+023a invoke-virtual v0, Lp5/k;->h()V
+0240 return-void

@@ -1,0 +1,38 @@
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+npm-debug.log*
+.rea/
+.env
+.env.*
+!.env.example
+
+# Private recovery inputs and large recovered databases
+/google_drive/
+/recovery-data/
+
+# Never publish app installers, private data, recovered keys, or signing keys.
+# Source-only ZIPs in recovered-source/ are intentionally versioned.
+*.apk
+*.xapk
+*.apkm
+*.dex
+*.jar
+*.class
+*.so
+*.db
+*.sqlite
+*.sqlite3
+*.realm
+*.private.*
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.key
+*.pem
+**/google-services.json
+**/*service-account*.json
+**/key.properties
+**/local.properties

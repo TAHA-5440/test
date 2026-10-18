@@ -1,0 +1,5 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:icon="@7F08021E" android:enabled="true" android:id="@7F0A0197" android:title="@7F1300C0"/>
+  <item android:icon="@7F080078" android:enabled="true" android:id="@7F0A0196" android:title="@7F13009D"/>
+  <item android:icon="@7F08022F" android:enabled="true" android:id="@7F0A0198" android:title="@7F1301AE"/>
+</menu>
