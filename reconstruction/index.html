@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>eAnatomy Inventory — REA Reconstruction</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;line-height:1.5}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:6px 8px}th{background:#f6f6f6}
+code{background:#f3f3f3;padding:2px 6px;border-radius:4px}
+.evidence{font-size:.9em;color:#555}
+</style>
+</head>
+<body>
+<h1>eAnatomy Image Inventory — REA Reconstruction</h1>
+<p class="evidence">Evidence: <code>eanatomy_images.recovered.db</code> SHA256 <code>d4f0c4b484d9ef30b59c1fdbb14054626448dac4903efc6b3ad80779c2648eb3</code> · REA <code>inspect_sqlite_database</code> SQLite 3.54.0 · Evidence IDs <code>ev_e964c7859518…</code>, <code>ev_db27eae72a6e950…</code></p>
+<p>This static page reconstructs how the original app resolves ordered image stacks. The DB does not store blobs — it stores inventory: <em>which</em> image at <em>which</em> order for each <code>(module, contrast, version)</code>. <code>downloaded</code> tracks cache; <code>sort_order</code> drives viewer pagination.</p>
+<h2>Modules (43) — from <code>evidence/module_breakdown.csv</code></h2>
+<table><thead><tr><th>module</th><th>contrast</th><th>version</th><th>count</th></tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+<script>
+fetch('../evidence/module_breakdown.csv').then(r=>r.text()).then(t=>{
+  const lines=t.trim().split('\n').slice(1);
+  const tb=document.getElementById('tbody');
+  lines.forEach(l=>{
+    const [mod,contrast,ver,count]=l.split(',');
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><code>${mod}</code></td><td>${contrast}</td><td>${ver}</td><td>${count}</td>`;
+    tb.appendChild(tr);
+  });
+});
+</script>
+<h2>Viewer Logic (reconstructed)</h2>
+<pre><code>PK(module_imaios_code, contrast, sort_order, version)
+stack = SELECT sort_order WHERE module=? AND contrast=? AND version=? ORDER BY sort_order
+viewer pagination: 1..N contiguous (N == COUNT(*))
+downloaded flag == 0 (all rows) → none cached
+image URL pattern hypothesis: https://cdn.imaios.com/eanatomy/{module}/{contrast}/{sort_order}.jpg?version={version}
+</code></pre>
+<p>Run <code>python reconstruction/viewer.py modules</code> or <code>python reconstruction/viewer.py stack cat-head-neck-ct contraste_ 1</code> locally.</p>
+<p>See <a href="../docs/REA_EANATOMY_ANALYSIS.md">REA_EANATOMY_ANALYSIS.md</a> and <code>evidence/*.json</code> for canonical Evidence.</p>
+</body>
+</html>
