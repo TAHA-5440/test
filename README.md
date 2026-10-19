@@ -1,4 +1,43 @@
-# REA recovery tools and recovered Pharmapedia client code
+# Vet Pharmapedia browser app & recovery workspace
+
+## Run the browser version
+
+A new responsive **React/TypeScript web client** is implemented in [`web/`](web/README.md).
+It runs as a normal website—no Android runtime or APK installation is required.
+
+```bash
+npm ci
+npm run dev
+```
+
+Open the displayed local URL, or the Arena **Pharmapedia web app** live preview.
+The server binds to `0.0.0.0:5173` and accepts the preview proxy host.
+
+Implemented: generic/brand search, source filters, paginated browsing, source
+medicine details/forms/dosages/alternatives, persistent favourites, JSON/CSV/SQLite
+import/export, light/dark themes, local IndexedDB storage, production offline app
+shell, and an optional authorised Firebase web connection.
+
+**The medicine catalogue is still not recovered or bundled.** The web app starts
+with zero records. Import actual authorised data or configure your own permitted
+Firebase source; no vendor keys or fake medicine entries are preloaded. Backend
+rules remain enforced, live-project access is unverified, and no clinical content
+is independently validated.
+
+```bash
+npm test                 # data/storage/safe-text unit tests
+npm run build            # static production build in ignored dist/
+npm run preview          # serve production build
+# In another terminal, with the production server running:
+PWA_TEST=1 npm run test:e2e
+```
+
+[Web application guide](docs/WEB_APP.md) covers data formats, SQLite/WAL limitations,
+privacy, Firebase setup, static hosting, native-feature differences and tests.
+The recovered Java below remains reference material, not the source used to run
+the web app or a buildable original Android Studio project.
+
+## Recovery tooling and client reference exports
 
 This repository contains project-local REA tooling, reproducible recovery scripts,
 and a **credential-sanitized reference export** of the supplied Vet. Pharmapedia
