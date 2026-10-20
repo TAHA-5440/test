@@ -1,0 +1,16 @@
+{
+  "name": "VetMasterJi — Veterinary Drug Calculator, Cases & Clinic EMR",
+  "short_name": "VetMasterJi",
+  "description": "Offline-first veterinary clinical toolkit: sourced drug dosing, fluid therapy, differential ranking, toxicology, clinical notes and clinic records.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f8f9",
+  "theme_color": "#0f766e",
+  "lang": "en",
+  "categories": ["medical", "education", "productivity"],
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
