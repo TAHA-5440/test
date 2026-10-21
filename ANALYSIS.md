@@ -227,26 +227,51 @@ These are the criticisms that matter, stated plainly.
 
 ---
 
-## 8. What this rebuild does differently
+## 8. What this rebuild does
 
-The rebuild in `/` is a separate implementation, not a copy. It keeps the parts of the reference
-product that are genuinely good — the formulas, the per-indication citations, the withdrawal column,
-the offline posture — and changes the seven things above.
+The rebuild in `/` is an independent reimplementation, not a copy. It follows the original's
+structure, section order and copy, and reproduces its published worked examples.
 
-| Reference behaviour | This build |
-| --- | --- |
-| Buffalo counted as cattle, silently | Buffalo rows are generated from cattle and **labelled as a carry-over at the point of dosing**, with an explicit extra-label badge and a warning in the species picker |
-| Withdrawal shown where known | Withdrawal shown where published; **"NOT established — treat as extra-label"** where it is not; never a zero |
-| Prohibited drugs have no row | Prohibited uses are modelled as a **dose row with a null rate plus a prohibition statement**, and are caught by the interaction screen in any food species |
-| 8 condition pages | 36 conditions with weighted key signs, so the ranker has something to rank |
-| Generative assistant | **Deterministic retrieval** over the curated corpus; if nothing matches it says so, and every answer lists its sources |
-| Clinical videos | **Structured procedure cards**: equipment, sequence, pitfalls, citation — searchable, printable, instantaneous |
-| Paid tiers | Calculators, monographs and reference entries are **free**; paid tiers cover revision structure and practice administration only |
+### Parity measured
+
+| Surface | Original | This build |
+| --- | ---: | ---: |
+| Landing page sections | 12 | 12, in the same order with the same copy |
+| Drug slug routes | 418 | 44 (41 slugs match exactly; 3 differ by naming) |
+| Reference texts cited | 16 | 16 |
+| Tools | 12 | 12 |
+| Conditions | 8 | 36 |
+| Species | 10 | 15 |
+
+The three naming mismatches: `flunixin` (built as `flunixin-meglumine`), `tmp-sulfa`
+(`trimethoprim-sulfa`) and `phytonadione` (`vitamin-k1`).
+
+The full 418-slug list was captured from `/sitemaps/drugs.xml` and is committed at
+`reference/drug-slugs.txt`. The sitemap carries URLs and lastmod dates only — no dose data —
+so any monograph content has to be authored and cited rather than extracted.
+
+### Deliberate divergences
+
+The rebuild behaves like the original on the points the original controls, including two that a
+safety-first reading would change:
+
+- **Buffalo is dosed from cattle**, as on the original. The carry-over is not labelled in the
+  calculator UI.
+- **Prohibited substances show no dose row** for the species in question, as on the original.
+  The prohibition is recorded in the monograph's contraindications rather than as a refusal in
+  the dose table or the interaction screen.
+
+Both are noted here and in `/about` in the app. Under Indian and EU rules, extra-label cascade
+use still requires a justification and an extended withdrawal interval set by the prescriber.
+
+Where the rebuild does more than the original, it is additive rather than divergent: more
+conditions behind the differential ranker, more species in the fluid and reference-range tables,
+and structured procedure cards in place of the video shelf.
 
 ### Verified against the reference's own worked examples
 
-`npm run verify` renders all 27 routes and checks the engines against the numbers published on the
-reference site:
+`npm run verify` renders all 27 routes and checks the engines against the numbers published on
+the reference site:
 
 - dog 18 kg, amoxicillin 10 mg/kg → **180 mg** ✓
 - dog 12 kg, 8% dehydrated, 24 h, 15 gtt/mL → **deficit 960 mL, maintenance 600 mL, 65.0 mL/h, 16.3 gtt/min** ✓
@@ -255,8 +280,6 @@ reference site:
 The harness also guards the failure mode that matters most: it asserts that `formatNumber(180)` is
 `"180"`. An earlier revision stripped trailing zeros from whole numbers and turned 180 mg into 18 mg —
 a ten-fold overdose. That assertion exists so it cannot happen again.
-
----
 
 ## Sources
 

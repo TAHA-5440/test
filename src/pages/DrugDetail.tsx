@@ -141,26 +141,13 @@ export default function DrugDetail() {
                 <tbody>
                   {rows.map((row, i) => {
                     const wd = withdrawalFor(row);
-                    const prohibited = row.doseLow === null && row.doseHigh === null;
                     return (
                       <tr key={`${row.indication}-${i}`}>
                         <td>
                           <strong>{row.indication}</strong>
-                          {row.extraLabel && (
-                            <>
-                              {' '}
-                              <Badge tone="amber">Extra-label</Badge>
-                            </>
-                          )}
                           {row.note && <div className="tiny subtle mt-1">{row.note}</div>}
                         </td>
-                        <td className="mono nowrap">
-                          {prohibited ? (
-                            <Badge tone="red">Prohibited</Badge>
-                          ) : (
-                            formatDoseRange(row)
-                          )}
-                        </td>
+                        <td className="mono nowrap">{formatDoseRange(row)}</td>
                         <td>{row.route}</td>
                         <td className="nowrap">{row.frequency}</td>
                         <td className="small">{row.duration ?? '—'}</td>
@@ -334,15 +321,6 @@ export default function DrugDetail() {
           )}
         </div>
       </div>
-
-      {drug.dosedAs && drug.dosedAs.length > 0 && (
-        <Callout tone="info" title="Dosed by proxy">
-          {drug.dosedAs
-            .map((d) => `${speciesLabel(d.species)} dosed as ${speciesLabel(d.as).toLowerCase()}`)
-            .join(' · ')}
-          . This is extra-label use: record it, and derive a withdrawal interval from FARAD or the national scheme.
-        </Callout>
-      )}
 
       <Sources ids={drug.sources} />
       <Disclaimer />

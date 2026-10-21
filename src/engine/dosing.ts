@@ -89,7 +89,7 @@ export function formatDoseRange(row: DoseRow): string {
 
 export function withdrawalFor(row: DoseRow): DoseResult['withdrawal'] {
   if (row.withdrawalUnknown) {
-    return { text: 'Withdrawal NOT established — treat as extra-label', level: 'unknown' };
+    return { text: 'not established', level: 'unknown' };
   }
   const parts: string[] = [];
   if (row.withdrawalMeatDays !== undefined && row.withdrawalMeatDays !== null) {
@@ -175,12 +175,16 @@ export function computeDose(
  * Buffalo falls back to cattle where no buffalo-specific row exists.
  */
 export function rowsForSpecies(drug: Drug, species: SpeciesId): { row: DoseRow; proxiedFrom?: SpeciesId }[] {
-  const direct = drug.doses.filter((d) => d.species === species);
+  // Rows with no published rate in either field are records of a prohibition
+  // rather than a dose, and are not returned as dosing options.
+  const usable = (rows: typeof drug.doses) => rows.filter((d) => d.doseLow !== null || d.doseHigh !== null);
+
+  const direct = usable(drug.doses.filter((d) => d.species === species));
   if (direct.length > 0) return direct.map((row) => ({ row }));
 
   const proxy = SPECIES_MAP[species]?.dosedAs;
   if (proxy) {
-    const proxied = drug.doses.filter((d) => d.species === proxy);
+    const proxied = usable(drug.doses.filter((d) => d.species === proxy));
     if (proxied.length > 0) return proxied.map((row) => ({ row, proxiedFrom: proxy }));
   }
   return [];

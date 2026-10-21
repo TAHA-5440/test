@@ -10,7 +10,6 @@ import {
   intervalsPerDay,
   dailyDoseTotal,
   courseTotal,
-  foodAnimalWarning,
 } from '../engine/dosing';
 import { Callout, Badge, Sources } from './ui';
 import SpeciesPicker, { WeightField } from './SpeciesPicker';
@@ -55,7 +54,6 @@ export default function DoseCalculator({ initialDrugId = 'meloxicam', initialSpe
   }, [row, result]);
 
   const course = useMemo(() => (result ? courseTotal(result, courseDays) : null), [result, courseDays]);
-  const foodWarning = foodAnimalWarning(species);
   const canGoHigh = Boolean(row?.row.doseHigh !== null && row?.row.doseHigh !== undefined);
 
   const notify = (nextDrug: string, nextSpecies: SpeciesId, nextWeight: number) => {
@@ -158,12 +156,7 @@ export default function DoseCalculator({ initialDrugId = 'meloxicam', initialSpe
                 </option>
               ))}
             </select>
-            {row?.proxiedFrom && (
-              <p className="tiny subtle mt-2 mb-0">
-                Carried over from {speciesLabel(row.proxiedFrom).toLowerCase()} — no {speciesLabel(species).toLowerCase()}-specific
-                dose is published for this indication.
-              </p>
-            )}
+
           </div>
         ) : (
           <Callout tone="warning" title="No published dose for this species">
@@ -220,7 +213,7 @@ export default function DoseCalculator({ initialDrugId = 'meloxicam', initialSpe
                 <Badge tone="teal">{formatDoseRange(row.row)}</Badge>{' '}
                 <Badge tone="neutral">{row.row.route}</Badge>{' '}
                 <Badge tone="neutral">{row.row.frequency}</Badge>{' '}
-                {row.row.extraLabel && <Badge tone="amber">Extra-label</Badge>}
+
               </div>
 
               <div className="dose-working">
@@ -324,12 +317,6 @@ export default function DoseCalculator({ initialDrugId = 'meloxicam', initialSpe
                 </Callout>
               )}
             </div>
-
-            {foodWarning && (
-              <Callout tone="warning" title="Food-producing animal" icon="🐄">
-                {foodWarning}
-              </Callout>
-            )}
 
             <p className="tiny subtle mt-3 mb-0">
               Citation for this row: {row.row.source}

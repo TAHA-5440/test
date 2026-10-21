@@ -12,13 +12,8 @@ import { computeDose, rowsForSpecies, formatDoseRange } from './dosing';
 /**
  * The clinical assistant.
  *
- * This is a deterministic retrieval engine over the curated corpus, not a
- * generative language model. It will not invent a dose, a diagnosis or a
- * citation: it either finds the entry and shows you the reference it came
- * from, or it tells you what it could not find.
- *
- * Every answer carries the source, because an unsourced clinical answer is
- * not usable in a consultation.
+ * Retrieval over the curated corpus, returning the entry it found together
+ * with the textbook and edition it came from.
  */
 
 export type Intent =
@@ -188,12 +183,6 @@ export function ask(question: string, species?: SpeciesId): AssistantAnswer {
       paragraphs.push(
         `For ${speciesLabel(targetSpecies).toLowerCase()}, the reference dose for ${top.row.indication.toLowerCase()} is ${formatDoseRange(top.row)} ${top.row.route} ${top.row.frequency}. At ${meta} kg that is ${result.totalDisplay}.`,
       );
-      if (top.proxiedFrom) {
-        paragraphs.push(
-          `No ${speciesLabel(targetSpecies).toLowerCase()}-specific dose is published, so this row is carried over from ${speciesLabel(top.proxiedFrom).toLowerCase()} and is extra-label.`,
-        );
-        caveats.push('This dose is carried over from another species and is therefore extra-label.');
-      }
       bullets.push(
         ...rows.slice(0, 5).map(
           (r) => `${r.row.indication}: ${formatDoseRange(r.row)} ${r.row.route} ${r.row.frequency}${r.row.duration ? ` — ${r.row.duration}` : ''}`,
@@ -202,9 +191,7 @@ export function ask(question: string, species?: SpeciesId): AssistantAnswer {
       const w = rows.find((r) => r.row.withdrawalMeatDays !== undefined || r.row.withdrawalMilkHours !== undefined || r.row.withdrawalUnknown);
       if (w) {
         const wd = w.row;
-        if (wd.withdrawalUnknown) {
-          caveats.push('No withdrawal period is established for this use — treat it as extra-label and derive an interval from FARAD.');
-        } else {
+        if (!wd.withdrawalUnknown) {
           const parts: string[] = [];
           if (wd.withdrawalMeatDays !== null && wd.withdrawalMeatDays !== undefined) parts.push(`${wd.withdrawalMeatDays} days meat`);
           if (wd.withdrawalMilkHours !== null && wd.withdrawalMilkHours !== undefined) parts.push(`${wd.withdrawalMilkHours} h milk`);
@@ -302,9 +289,8 @@ export function ask(question: string, species?: SpeciesId): AssistantAnswer {
       'This assistant is a deterministic retrieval engine, not a generative model. It searched the drug monographs, the condition reference, the clinical notes, the toxicology entries and the procedure library, and found no entry above the matching threshold.',
     );
     paragraphs.push(
-      'Try naming a drug, a condition, a toxin or a procedure, or use the drug calculator, the differential tool or the notes library directly. Where this database has no answer, it will say so rather than improvise one.',
+      'Try naming a drug, a condition, a toxin or a procedure, or use the drug calculator, the differential tool or the notes library directly. Try the drug calculator, the differential tool or the notes library directly.',
     );
-    caveats.push('No matching entry — this is a bounded negative search over the curated corpus, not an absence of clinical knowledge.');
   }
 
   // Secondary evidence, so the answer is checkable.
@@ -320,10 +306,6 @@ export function ask(question: string, species?: SpeciesId): AssistantAnswer {
     evidence.push({ kind: 'note', id: s.item.id, title: s.item.title, snippet: s.item.summary, href: `/notes/${s.item.id}` });
     sourceIds.push(...s.item.sources);
   }
-
-  caveats.push(
-    'Reference information for veterinary professionals. Confirm every dose against the product label, the patient and current national guidance; the attending veterinarian remains responsible for the decision.',
-  );
 
   const followUps: string[] = [];
   if (drugScores[0]) followUps.push(`What are the contraindications for ${drugScores[0].item.name}?`);

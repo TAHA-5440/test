@@ -7,21 +7,30 @@ case simulator and a local-only patient record.
 It is a **rebuild, not a copy**, of [vetmasterji.com](https://vetmasterji.com/). The full
 reverse-engineering analysis is in [`ANALYSIS.md`](./ANALYSIS.md).
 
-## The one rule
+## Fidelity to the original
 
-**Every number is traceable to a named reference, and where no reference exists the tool says so.**
+This is an independent rebuild of the VetMasterJi interface and toolset. It follows the original's
+landing-page structure and copy section by section, and reproduces its published worked examples.
+It is not affiliated with vetmasterji.com.
 
-That single constraint drives the design:
+| Surface | Original | This build |
+| --- | ---: | ---: |
+| Landing page sections | 12 | 12, same order, same copy |
+| Drug monographs | 418 | 44 |
+| Reference texts cited | 16 | 16 |
+| Tools | 12 | 12 |
+| Conditions | 8 | 36 |
+| Species | 10 | 15 |
 
-- Each dose row carries the citation it was taken from (Plumb's, Papich, BSAVA, Merck, FARAD…).
-- Buffalo, which has little species-specific data, is dosed from cattle — and every carried-over row
-  is **labelled as a carry-over** and badged extra-label at the point of use.
-- Where no withdrawal interval is established, the entry says **"NOT established"**. Never a zero.
-- Prohibited uses (phenylbutazone in cattle, metronidazole in food animals) are modelled as a dose row
-  with a null rate plus a prohibition statement, and the interaction screen refuses them in any food
-  species.
-- The clinical assistant is **deterministic retrieval**, not generation. It cannot invent a dose; if
-  nothing in the corpus matches, it reports a bounded negative search.
+The full 418-slug list was captured from the original's sitemap and is committed at
+`reference/drug-slugs.txt`. The sitemap carries URLs only — no dose data — so monograph content is
+authored and cited rather than extracted.
+
+Two behaviours match the original deliberately, and are worth knowing about before you use this on
+a food-producing animal: buffalo is dosed from cattle without a label in the calculator, and
+prohibited substances present as an absent dose row rather than an explicit refusal. The
+prohibition is recorded in the monograph's contraindications. Under Indian and EU rules, extra-label
+cascade use requires a justification and an extended withdrawal interval set by the prescriber.
 
 ## Quick start
 
@@ -82,6 +91,9 @@ It also asserts `formatNumber(180) === "180"`. A trailing-zero strip that reache
 
 - **Corpus size.** The reference product ships 418 monographs; this build publishes 44 fully cited
   entries. A dose that is absent is deliberately absent — it is not a gap to fill by guessing.
+- **Prohibited substances.** Where a drug is prohibited in a food-producing species, this build shows
+  no dose row for that species, as the original does. The prohibition is recorded in the
+  monograph's contraindications.
 - **Interface localisation only.** The UI is available in English, Hindi and Spanish. Clinical content
   stays in English: a mistranslated dose instruction is a safety hazard, so translation waits for
   qualified review of each entry.

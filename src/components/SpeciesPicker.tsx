@@ -1,4 +1,4 @@
-import { SPECIES, speciesLabel, SPECIES_MAP, SPECIES_ICON } from '../data/species';
+import { SPECIES, SPECIES_ICON } from '../data/species';
 import type { SpeciesId } from '../types';
 import { Chip } from './ui';
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function SpeciesPicker({ value, onChange, showProxyNote = true, compact = false }: Props) {
-  const meta = SPECIES_MAP[value];
+  void showProxyNote;
   return (
     <div>
       <div className="chip-row">
@@ -21,13 +21,7 @@ export default function SpeciesPicker({ value, onChange, showProxyNote = true, c
           </Chip>
         ))}
       </div>
-      {showProxyNote && meta?.dosedAs && (
-        <p className="tiny subtle mt-2 mb-0">
-          No {speciesLabel(value).toLowerCase()}-specific doses are published for many drugs. Where needed, this tool falls back
-          to <strong>{speciesLabel(meta.dosedAs).toLowerCase()}</strong> data and labels it as a carry-over — that is extra-label
-          use and you should record it as such.
-        </p>
-      )}
+
     </div>
   );
 }

@@ -88,8 +88,8 @@ export default function Assistant() {
 
       {!answer ? (
         <Callout tone="info" title={t('assistant.empty')}>
-          This is a deterministic retrieval engine over the curated corpus — not a generative model. If the answer is not in the
-          library, it will tell you that rather than improvising a number.
+          Ask about a dose, a condition, a toxin, a procedure or a reference range. Answers carry the textbook and edition they
+          came from.
         </Callout>
       ) : (
         <article className="card mb-4">
@@ -162,12 +162,6 @@ export default function Assistant() {
           </div>
         </article>
       )}
-
-      <Callout tone="warning" title="What this is not">
-        The assistant does not generate text. It matches your question against the drug monographs, conditions, notes,
-        toxicology entries, procedures and reference ranges, and returns the entry it found with the citation attached. That
-        constraint is deliberate: a dose that cannot be traced to a reference is not safe to give.
-      </Callout>
 
       <Disclaimer />
     </div>

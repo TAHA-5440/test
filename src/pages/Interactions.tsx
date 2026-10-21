@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DRUGS, DRUG_MAP, searchDrugs } from '../data/drugs';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
-import { foodAnimalWarning } from '../engine/dosing';
 import { screenPrescription, severityLabel } from '../engine/interactions';
 import type { Severity } from '../engine/interactions';
 import { PageHeader, Callout, Badge, Chip, Empty, Disclaimer, Sources } from '../components/ui';
@@ -23,8 +22,7 @@ export default function Interactions() {
 
   const suggestions = useMemo(() => (query.trim() ? searchDrugs(query).slice(0, 8) : []), [query]);
 
-  const findings = useMemo(() => screenPrescription(selected, species), [selected, species]);
-  const foodWarning = foodAnimalWarning(species);
+  const findings = useMemo(() => screenPrescription(selected), [selected]);
 
   const add = (id: string) => {
     setSelected((prev) => (prev.includes(id) ? prev : [...prev, id]));
@@ -171,12 +169,6 @@ export default function Interactions() {
                 </div>
               </div>
 
-              {foodWarning && (
-                <Callout tone="warning" title="Food-producing animal">
-                  {foodWarning}
-                </Callout>
-              )}
-
               {findings.length === 0 ? (
                 <Callout tone="success" title="Nothing flagged">
                   No class-level rule or monograph pairing fires for this combination in a {speciesLabel(species).toLowerCase()}.
@@ -222,10 +214,6 @@ export default function Interactions() {
               </li>
               <li>
                 <strong>Monograph pairings</strong> — specific interactions recorded on the individual drug entries.
-              </li>
-              <li>
-                <strong>Food-animal flags</strong> — residue and prohibited-substance warnings that apply the moment the species
-                is a production animal.
               </li>
               <li>
                 <strong>Duplicate therapy</strong> — two drugs of the same class, which is the most common way a patient

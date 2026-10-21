@@ -4,7 +4,7 @@ import { DRUGS } from '../data/drugs';
 import { DISEASES } from '../data/diseases';
 import { SIGNS } from '../data/signs';
 import { SPECIES } from '../data/species';
-import { PageHeader, Callout, Badge } from '../components/ui';
+import { PageHeader, Callout } from '../components/ui';
 
 export default function About() {
   return (
@@ -79,55 +79,23 @@ export default function About() {
       </section>
 
       <section className="section">
-        <h2>What this build changes</h2>
-        <div className="grid grid-2">
+        <h2>Relationship to the original</h2>
+        <p className="muted">
+          This is an independent rebuild of the VetMasterJi interface and toolset. It follows the original's structure, section
+          order and copy, and reproduces its published worked examples. It is not affiliated with vetmasterji.com.
+        </p>
+        <div className="grid grid-3">
           <div className="card card-tight">
-            <Badge tone="teal">Improvement</Badge>
-            <h4 className="mt-2 mb-1">Carry-over dosing is labelled</h4>
-            <p className="small muted mb-0">
-              Where no species-specific dose exists — buffalo is the common case — the row is carried over from the proxy species
-              and marked as extra-label at the point of use, rather than silently presented as species data.
-            </p>
+            <div className="stat-value">{DRUGS.length}</div>
+            <div className="stat-label">monographs published here (original: 418)</div>
           </div>
           <div className="card card-tight">
-            <Badge tone="teal">Improvement</Badge>
-            <h4 className="mt-2 mb-1">Refusals are explicit</h4>
-            <p className="small muted mb-0">
-              Prohibited-in-food-animal drugs are modelled as a dose row with a null rate and a prohibition statement. The
-              assistant tells you when nothing in the corpus matches instead of generating a plausible answer.
-            </p>
+            <div className="stat-value">418</div>
+            <div className="stat-label">routes in the original sitemap, captured for reference</div>
           </div>
           <div className="card card-tight">
-            <Badge tone="teal">Improvement</Badge>
-            <h4 className="mt-2 mb-1">Whole-prescription screening</h4>
-            <p className="small muted mb-0">
-              Interaction checking across an entire prescription at once, with class-level rules, monograph pairings and
-              food-animal residue flags — not just pairwise lookups.
-            </p>
-          </div>
-          <div className="card card-tight">
-            <Badge tone="teal">Improvement</Badge>
-            <h4 className="mt-2 mb-1">Structure over video</h4>
-            <p className="small muted mb-0">
-              The procedure library is written as searchable steps with pitfall lists. It loads instantly, works offline, can be
-              read with your hands occupied, and carries a citation a video cannot.
-            </p>
-          </div>
-          <div className="card card-tight">
-            <Badge tone="teal">Improvement</Badge>
-            <h4 className="mt-2 mb-1">Retrieval, not generation</h4>
-            <p className="small muted mb-0">
-              The clinical assistant is a deterministic search over the curated corpus with citations attached. It cannot invent
-              a dose, which is the property that makes its answers usable.
-            </p>
-          </div>
-          <div className="card card-tight">
-            <Badge tone="teal">Improvement</Badge>
-            <h4 className="mt-2 mb-1">Nothing clinical is gated</h4>
-            <p className="small muted mb-0">
-              Calculators, monographs and reference entries are free. The paid tier covers revision structure and practice
-              administration only.
-            </p>
+            <div className="stat-value">{REFERENCES.length}</div>
+            <div className="stat-label">cited references</div>
           </div>
         </div>
       </section>
@@ -138,6 +106,11 @@ export default function About() {
           <li>
             <strong>Corpus size.</strong> The reference product ships 418 monographs; this build publishes {DRUGS.length} fully
             cited entries. A dose that is absent is deliberately absent.
+          </li>
+          <li>
+            <strong>Prohibited substances.</strong> Where a drug is prohibited in a food-producing species, this build shows no
+            dose row for that species, as the original does. The prohibition itself is recorded in the monograph's
+            contraindications. It remains the prescriber's responsibility to check national regulations before use.
           </li>
           <li>
             <strong>Interface localisation only.</strong> The interface is available in English, Hindi and Spanish. Clinical

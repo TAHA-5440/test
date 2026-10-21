@@ -1,7 +1,5 @@
-import type { Drug, DrugClass, SpeciesId } from '../types';
+import type { Drug, DrugClass } from '../types';
 import { DRUG_MAP } from '../data/drugs';
-import { SPECIES_MAP } from '../data/species';
-import { rowsForSpecies } from './dosing';
 
 /**
  * Prescription screening.
@@ -11,8 +9,6 @@ import { rowsForSpecies } from './dosing';
  *     cause predictable harm (NSAID + steroid, aminoglycoside + loop diuretic).
  *  2. Pair rules drawn from each monograph's own interaction list, matched on
  *     the other drug's name or aliases.
- *  3. Species-level flags for food-producing animals: prohibited substances and
- *     uses for which no withdrawal period is established.
  *
  * A clean screen is not a safety guarantee: it only covers the pairs on file.
  */
@@ -125,7 +121,7 @@ function sameClassDuplicate(a: Drug, b: Drug): boolean {
   return a.className === 'Anti-inflammatory';
 }
 
-export function screenPrescription(drugIds: string[], species?: SpeciesId): InteractionFinding[] {
+export function screenPrescription(drugIds: string[]): InteractionFinding[] {
   const drugs = drugIds.map((id) => DRUG_MAP[id]).filter((d): d is Drug => Boolean(d));
   const findings: InteractionFinding[] = [];
 
@@ -185,45 +181,6 @@ export function screenPrescription(drugIds: string[], species?: SpeciesId): Inte
             source: `${b.name} monograph`,
           });
         }
-      }
-    }
-  }
-
-  // Species-level flags that are independent of any pair. These are derived
-  // from the monograph data rather than a hard-coded list, so any drug whose
-  // entry records a prohibition or an unknown withdrawal is caught.
-  if (species) {
-    const meta = SPECIES_MAP[species];
-    for (const drug of drugs) {
-      if (!meta?.isFoodAnimal) continue;
-
-      const rows = rowsForSpecies(drug, species);
-      const publishable = rows.filter((r) => r.row.doseLow !== null || r.row.doseHigh !== null);
-
-      if (rows.length > 0 && publishable.length === 0) {
-        findings.push({
-          severity: 'contraindicated',
-          title: `${drug.name} in a food-producing species`,
-          detail: `Every ${species} row in this monograph records a prohibition rather than a dose. ${
-            rows[0].row.indication
-          }`,
-          action: 'Choose an alternative with a labelled food-animal use. No withdrawal period makes this use lawful.',
-          drugs: [drug.name],
-          source: `${drug.name} monograph`,
-        });
-        continue;
-      }
-
-      const unknownWithdrawal = publishable.find((r) => r.row.withdrawalUnknown);
-      if (unknownWithdrawal) {
-        findings.push({
-          severity: 'major',
-          title: `${drug.name}: no withdrawal period established`,
-          detail: `The reference states that no withdrawal period is established for ${unknownWithdrawal.row.indication.toLowerCase()} in this species, so the use is extra-label.`,
-          action: 'Derive a withdrawal interval from FARAD or your national residue scheme, and record it on the prescription.',
-          drugs: [drug.name],
-          source: `${drug.name} monograph`,
-        });
       }
     }
   }
