@@ -1,0 +1,26 @@
+{
+  "name": "vetmasterji-rebuild",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "An independent, offline-first veterinary clinical toolkit: drug dose calculator, fluid therapy, differential ranking, case simulator, clinic EMR and sourced clinical assistant.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "verify": "vite build -c vite.verify.config.ts --logLevel error && node dist-verify/verify.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9"
+  }
+}
