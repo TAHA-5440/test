@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { REFERENCE_RANGES, checkValue, RANGE_SPECIES } from '../data/referenceRanges';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { RefRangeRow, SpeciesId } from '../types';
-import { PageHeader, Callout, Chip, Badge, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Chip, Badge, Disclaimer, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 
 const VERDICT: Record<string, { tone: 'green' | 'red' | 'neutral'; label: string }> = {
@@ -32,6 +32,7 @@ export default function ReferenceRanges() {
 
   return (
     <div className="container page">
+      <BackLink to="/tools" />
       <PageHeader
         eyebrow="Tool"
         title="Reference ranges"
@@ -148,6 +149,7 @@ export default function ReferenceRanges() {
       </Callout>
 
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

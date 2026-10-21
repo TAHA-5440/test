@@ -4,7 +4,7 @@ import { ask } from '../engine/assistant';
 import type { AssistantAnswer } from '../engine/assistant';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
-import { PageHeader, Callout, Chip, Badge, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Chip, Badge, Disclaimer, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 import { useI18n } from '../i18n';
 
@@ -41,6 +41,7 @@ export default function Assistant() {
 
   return (
     <div className="container page">
+      <BackLink to="/tools" />
       <PageHeader eyebrow="Tool" title={t('assistant.title')} lede={t('assistant.subtitle')} />
 
       <div className="card mb-4">
@@ -164,6 +165,7 @@ export default function Assistant() {
       )}
 
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

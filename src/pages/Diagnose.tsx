@@ -4,7 +4,7 @@ import { SIGNS, SIGN_MAP, signLabel, signsBySystem, COMMON_SIGN_IDS } from '../d
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
 import { rankDifferentials, discriminatingSigns, confidenceBand, redFlags } from '../engine/differentials';
-import { PageHeader, Callout, Chip, Badge, Empty, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Chip, Badge, Empty, Disclaimer, BackLink, PageFooter } from '../components/ui';
 import SpeciesPicker from '../components/SpeciesPicker';
 import { usePreferences } from '../state/PreferencesContext';
 
@@ -24,6 +24,7 @@ export default function Diagnose() {
 
   return (
     <div className="container page">
+      <BackLink to="/tools" />
       <PageHeader
         eyebrow="Tool"
         title="Differential diagnosis"
@@ -191,6 +192,7 @@ export default function Diagnose() {
       </section>
 
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

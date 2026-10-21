@@ -1,4 +1,6 @@
 import type { Drug, DrugClass, SpeciesId } from '../../types';
+import { SPECIES } from '../../data/species';
+import { formatNumber } from '../../engine/dosing';
 import { ANTIBIOTICS } from './antibiotics';
 import { ANTIPARASITICS } from './antiparasitics';
 import { ANALGESIA } from './analgesia';
@@ -68,4 +70,33 @@ export function searchDrugs(query: string): Drug[] {
 
 export function relatedDrugs(drug: Drug, limit = 6): Drug[] {
   return DRUGS.filter((d) => d.id !== drug.id && d.className === drug.className).slice(0, limit);
+}
+
+/** The headline dose shown on a drug card: "10–20 mg/kg PO". */
+export function primaryDose(drug: Drug): string {
+  const row = drug.doses.find((d) => d.doseLow !== null || d.doseHigh !== null) ?? drug.doses[0];
+  if (!row) return '';
+  const unit = row.unit.replace('/animal', ' per animal').replace('/quarter', ' per quarter').replace('/L', ' per litre');
+  if (row.doseLow === null && row.doseHigh === null) return `${row.indication}`;
+  if (row.doseHigh !== null && row.doseLow !== null && row.doseHigh !== row.doseLow) {
+    return `${formatNumber(row.doseLow)}–${formatNumber(row.doseHigh)} ${unit} ${row.route}`;
+  }
+  return `${formatNumber(row.doseLow ?? row.doseHigh ?? 0)} ${unit} ${row.route}`;
+}
+
+/**
+ * Ordered species coverage for a drug card: the first three are named on the
+ * card itself and the remainder collapse into a "+N" chip, as on /drugs.
+ */
+export function speciesCoverage(drug: Drug): { named: SpeciesId[]; extra: number } {
+  const seen = new Set<SpeciesId>();
+  for (const row of drug.doses) {
+    if (row.doseLow === null && row.doseHigh === null) continue;
+    seen.add(row.species);
+  }
+  if (seen.size === 0) {
+    for (const row of drug.doses) seen.add(row.species);
+  }
+  const ordered = SPECIES.filter((s) => seen.has(s.id)).map((s) => s.id);
+  return { named: ordered.slice(0, 3), extra: Math.max(0, ordered.length - 3) };
 }

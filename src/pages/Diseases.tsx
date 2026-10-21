@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { DISEASES, searchDiseases, diseasesForSpecies } from '../data/diseases';
 import { signLabel } from '../data/signs';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
-import { PageHeader, Chip, Badge, Empty, Callout } from '../components/ui';
+import { PageHeader, Chip, Badge, Empty, Callout, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 
 export default function Diseases() {
@@ -33,6 +33,7 @@ export default function Diseases() {
 
   return (
     <div className="container page">
+      <BackLink to="/" />
       <PageHeader
         eyebrow="Reference"
         title={`Condition reference`}
@@ -117,6 +118,7 @@ export default function Diseases() {
         Every condition lists its key signs with the weight the ranker assigns them. That makes the differential tool auditable:
         you can see why a condition scored what it scored rather than taking the percentage on trust.
       </Callout>
+          <PageFooter />
     </div>
   );
 }

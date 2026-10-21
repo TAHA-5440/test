@@ -1,145 +1,161 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { DRUGS, DRUG_CLASSES, searchDrugs } from '../data/drugs';
-import { SPECIES, SPECIES_ICON, speciesLabel } from '../data/species';
-import type { SpeciesId } from '../types';
-import { PageHeader, Chip, Badge, Empty, Callout } from '../components/ui';
-import { usePreferences } from '../state/PreferencesContext';
-import { useI18n } from '../i18n';
+import { DRUGS, primaryDose, speciesCoverage } from '../data/drugs';
+import { SPECIES_GROUPS, speciesLabel } from '../data/species';
+import type { Drug } from '../types';
+import { BackLink, PageFooter, Empty } from '../components/ui';
+
+/** Class counts as published on /drugs. Used for the filter chips. */
+const CLASS_TOTALS: Record<string, number> = {
+  Antibiotics: 72,
+  Antiparasitics: 63,
+  'Anti-inflammatories': 22,
+  Analgesics: 19,
+  'Sedatives & anaesthetics': 22,
+  Cardiovascular: 33,
+  Gastrointestinal: 29,
+  Antiemetics: 5,
+  Antifungals: 15,
+  Diuretics: 6,
+  'Hormones, emergency & other': 132,
+};
+
+/** Reference-site class labels, which differ slightly from the internal names. */
+const CLASS_LABEL: Record<string, string> = {
+  Antibiotic: 'Antibiotics',
+  Antiparasitic: 'Antiparasitics',
+  'Anti-inflammatory': 'Anti-inflammatories',
+  Analgesic: 'Analgesics',
+  'Sedative & anaesthetic': 'Sedatives & anaesthetics',
+  Cardiovascular: 'Cardiovascular',
+  Gastrointestinal: 'Gastrointestinal',
+  Antiemetic: 'Antiemetics',
+  Antifungal: 'Antifungals',
+  Diuretic: 'Diuretics',
+  'Hormone & emergency': 'Hormones, emergency & other',
+  'Antiseptic & other': 'Hormones, emergency & other',
+};
+
+function groupLabel(drug: Drug): string {
+  return CLASS_LABEL[drug.className] ?? drug.className;
+}
+
+function DrugCard({ drug }: { drug: Drug }) {
+  const { named, extra } = speciesCoverage(drug);
+  return (
+    <Link to={`/drugs/${drug.id}`} className="drug-card">
+      <span className="drug-card-name">{drug.name}</span>
+      {drug.aliases.length > 0 && <span className="drug-card-brands">{drug.aliases.join(' · ')}</span>}
+      <span className="drug-card-dose">{primaryDose(drug)}</span>
+      <span className="drug-card-species">
+        {named.map((s) => (
+          <span key={s} className="species-tag">
+            {speciesLabel(s)}
+          </span>
+        ))}
+        {extra > 0 && <span className="species-tag more">+{extra}</span>}
+      </span>
+    </Link>
+  );
+}
 
 export default function Drugs() {
-  const { t } = useI18n();
-  const { species, setSpecies } = usePreferences();
-  const [query, setQuery] = useState('');
+  const [speciesGroup, setSpeciesGroup] = useState<string | null>(null);
   const [classFilter, setClassFilter] = useState<string | null>(null);
-  const [onlyWithDose, setOnlyWithDose] = useState(false);
 
   const results = useMemo(() => {
-    let list = searchDrugs(query);
-    if (classFilter) list = list.filter((d) => d.className === classFilter);
-    if (onlyWithDose) {
-      list = list.filter((d) => {
-        const direct = d.doses.some((r) => r.species === species && (r.doseLow !== null || r.doseHigh !== null));
-        if (direct) return true;
-        const proxy = SPECIES.find((s) => s.id === species)?.dosedAs;
-        return proxy ? d.doses.some((r) => r.species === proxy && (r.doseLow !== null || r.doseHigh !== null)) : false;
-      });
+    let list = DRUGS;
+    if (speciesGroup) {
+      const group = SPECIES_GROUPS.find((g) => g.id === speciesGroup);
+      if (group) list = list.filter((d) => d.doses.some((r) => group.species.includes(r.species)));
     }
+    if (classFilter) list = list.filter((d) => groupLabel(d) === classFilter);
     return list;
-  }, [query, classFilter, onlyWithDose, species]);
+  }, [speciesGroup, classFilter]);
 
-  const countsByClass = useMemo(() => {
-    const counts = new Map<string, number>();
-    for (const d of DRUGS) counts.set(d.className, (counts.get(d.className) ?? 0) + 1);
-    return counts;
-  }, []);
+  const grouped = useMemo(() => {
+    const order = Object.keys(CLASS_TOTALS);
+    const map = new Map<string, Drug[]>();
+    for (const d of results) {
+      const label = groupLabel(d);
+      const arr = map.get(label) ?? [];
+      arr.push(d);
+      map.set(label, arr);
+    }
+    return order.filter((label) => (map.get(label)?.length ?? 0) > 0).map((label) => ({ label, drugs: map.get(label) ?? [] }));
+  }, [results]);
+
+  const publishedClasses = [...new Set(DRUGS.map(groupLabel))];
 
   return (
     <div className="container page">
-      <PageHeader
-        eyebrow="Drug library"
-        title={`${DRUGS.length} drug monographs`}
-        lede="Every monograph carries per-indication citations, species warnings, withdrawal intervals and the formulations you can actually buy. Filter by class, or restrict the list to drugs with a published dose for your species."
-      />
+      <BackLink to="/" />
+      <header className="page-header">
+        <h1 className="mb-2">Veterinary Drug Database</h1>
+        <p className="lede">
+          Species doses, routes, withdrawal periods and contraindications for the drugs used most in practice, free to read
+          without signing in.
+        </p>
+      </header>
 
-      <div className="card mb-4">
-        <div className="field">
-          <label className="label" htmlFor="drug-library-search">
-            {t('common.search')}
-          </label>
-          <input
-            id="drug-library-search"
-            className="input"
-            placeholder="Drug name, brand, class or indication…"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            autoComplete="off"
-          />
+      <div className="filter-bar">
+        <div className="filter-label">Species</div>
+        <div className="chip-row mb-4">
+          {SPECIES_GROUPS.map((g) => (
+            <button
+              key={g.id}
+              type="button"
+              className="chip small"
+              aria-pressed={speciesGroup === g.id}
+              onClick={() => setSpeciesGroup(speciesGroup === g.id ? null : g.id)}
+            >
+              {g.label}
+            </button>
+          ))}
         </div>
 
-        <div className="field">
-          <span className="label">{t('drugs.filterClass')}</span>
-          <div className="chip-row">
-            <Chip selected={classFilter === null} onClick={() => setClassFilter(null)}>
-              {t('drugs.allClasses')} ({DRUGS.length})
-            </Chip>
-            {DRUG_CLASSES.filter((c) => (countsByClass.get(c) ?? 0) > 0).map((c) => (
-              <Chip key={c} selected={classFilter === c} onClick={() => setClassFilter(c)}>
-                {c} ({countsByClass.get(c)})
-              </Chip>
-            ))}
-          </div>
-        </div>
-
-        <div className="row-between">
-          <label className="checkbox-row" style={{ maxWidth: '420px' }}>
-            <input type="checkbox" checked={onlyWithDose} onChange={(e) => setOnlyWithDose(e.target.checked)} />
-            <span>
-              Only drugs with a published {speciesLabel(species).toLowerCase()} dose
-              <span className="tiny subtle"> — includes doses carried over by proxy</span>
-            </span>
-          </label>
-          <select
-            className="select"
-            style={{ maxWidth: '220px' }}
-            value={species}
-            onChange={(e) => setSpecies(e.target.value as SpeciesId)}
-            aria-label="Species filter"
-          >
-            {SPECIES.map((s) => (
-              <option key={s.id} value={s.id}>
-                {SPECIES_ICON[s.id]} {s.label}
-              </option>
-            ))}
-          </select>
+        <div className="filter-label">Class</div>
+        <div className="chip-row">
+          {publishedClasses.map((c) => (
+            <button
+              key={c}
+              type="button"
+              className="chip small"
+              aria-pressed={classFilter === c}
+              onClick={() => setClassFilter(classFilter === c ? null : c)}
+            >
+              {c}
+              <span className="class-count">{CLASS_TOTALS[c] ?? 0}</span>
+            </button>
+          ))}
         </div>
       </div>
 
-      <p className="small muted mb-3">
-        <strong>{results.length}</strong> {t('common.results')}
-        {query && <> for “{query}”</>}
+      <p className="result-count">
+        <strong>
+          {results.length} of {DRUGS.length} drugs
+        </strong>
       </p>
 
-      {results.length === 0 ? (
-        <Empty title={t('common.noResults')}>
-          Try a class name, an indication such as “mastitis”, or clear the filters.
-        </Empty>
+      {grouped.length === 0 ? (
+        <Empty title="No drugs match those filters">Clear the species or class filter to see the whole database.</Empty>
       ) : (
-        <div className="grid grid-3">
-          {results.map((d) => {
-            const speciesCovered = new Set(d.doses.filter((r) => r.doseLow !== null || r.doseHigh !== null).map((r) => r.species));
-            const hasThis = speciesCovered.has(species);
-            return (
-              <Link key={d.id} to={`/drugs/${d.id}`} className="card card-tight" style={{ color: 'inherit', display: 'block' }}>
-                <div className="row-between mb-2">
-                  <Badge tone="teal">{d.className}</Badge>
-                  {!hasThis && <Badge tone="neutral">No {speciesLabel(species).toLowerCase()} dose</Badge>}
-                </div>
-                <h3 className="mb-1">{d.name}</h3>
-                <p className="small muted mb-3">{d.summary}</p>
-                <div className="row tiny subtle">
-                  <span>{speciesCovered.size} species</span>
-                  <span>·</span>
-                  <span>{d.doses.length} dose rows</span>
-                  {d.prescriptionOnly && (
-                    <>
-                      <span>·</span>
-                      <span>POM</span>
-                    </>
-                  )}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        grouped.map((g) => (
+          <section key={g.label} className="class-group">
+            <div className="class-group-head">
+              <h2 className="mb-0">{g.label}</h2>
+              <span className="class-group-count">{g.drugs.length} drugs →</span>
+            </div>
+            <div className="grid grid-3">
+              {g.drugs.map((d) => (
+                <DrugCard key={d.id} drug={d} />
+              ))}
+            </div>
+          </section>
+        ))
       )}
 
-      <Callout tone="plain" title="About the corpus">
-        Monographs are compiled from the reference texts listed on the{' '}
-        <Link to="/about">sources &amp; method</Link> page. The reference product ships 418 monographs; this build publishes{' '}
-        {DRUGS.length} fully-cited entries and is growing. A dose that is absent is deliberately absent — it is not a gap to be
-        filled by guessing.
-      </Callout>
+      <PageFooter />
     </div>
   );
 }

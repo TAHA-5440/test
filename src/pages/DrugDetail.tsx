@@ -6,7 +6,7 @@ import { referenceTitle } from '../data/references';
 import type { SpeciesId } from '../types';
 import { formatDoseRange, withdrawalFor, rowsForSpecies } from '../engine/dosing';
 import DoseCalculator from '../components/DoseCalculator';
-import { Callout, Badge, Sources, Empty, Disclaimer } from '../components/ui';
+import { Callout, Badge, Sources, Empty, Disclaimer, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 
 const SEVERITY_TONE: Record<string, 'red' | 'amber' | 'blue' | 'neutral'> = {
@@ -45,6 +45,7 @@ export default function DrugDetail() {
   if (!drug) {
     return (
       <div className="container page">
+      <BackLink to="/drugs" />
         <Empty title="That monograph is not in the library">
           The library currently publishes {DRUGS.length} monographs. <Link to="/drugs">Browse the full list</Link>.
         </Empty>
@@ -324,6 +325,7 @@ export default function DrugDetail() {
 
       <Sources ids={drug.sources} />
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

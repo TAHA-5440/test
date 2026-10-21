@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { NOTE_MAP, NOTES } from '../data/notes';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
-import { PageHeader, Callout, Badge, Empty, Sources, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Badge, Empty, Sources, Disclaimer, BackLink, PageFooter } from '../components/ui';
 
 export default function NoteDetail() {
   const { id = '' } = useParams();
@@ -11,6 +11,7 @@ export default function NoteDetail() {
   if (!note) {
     return (
       <div className="container page">
+      <BackLink to="/notes" />
         <Empty title="That note is not in the library">
           There are {NOTES.length} clinical notes. <Link to="/notes">Browse them all</Link>.
         </Empty>
@@ -94,6 +95,7 @@ export default function NoteDetail() {
       )}
 
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

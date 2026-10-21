@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { PROCEDURES, PROCEDURE_SYSTEMS, searchProcedures } from '../data/procedures';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
-import { PageHeader, Chip, Badge, Empty, Callout, Disclaimer } from '../components/ui';
+import { PageHeader, Chip, Badge, Empty, Callout, Disclaimer, BackLink, PageFooter } from '../components/ui';
 
 const LEVEL_TONE: Record<string, 'green' | 'amber' | 'red'> = {
   Core: 'green',
@@ -22,6 +22,7 @@ export default function Procedures() {
 
   return (
     <div className="container page">
+      <BackLink to="/" />
       <PageHeader
         eyebrow="Reference"
         title="Procedure library"
@@ -144,6 +145,7 @@ export default function Procedures() {
       </Callout>
 
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

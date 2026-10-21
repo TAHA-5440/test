@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CHALLENGES, dailyChallenge, shuffledChallenges } from '../data/challenges';
 import { speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
-import { PageHeader, Callout, Badge, Chip } from '../components/ui';
+import { PageHeader, Callout, Badge, Chip, BackLink, PageFooter } from '../components/ui';
 import { usePreferences, VET_BANDS } from '../state/PreferencesContext';
 
 type Mode = 'daily' | 'drill';
@@ -47,6 +47,7 @@ export default function Challenge() {
 
   return (
     <div className="container page" style={{ maxWidth: '860px' }}>
+      <BackLink to="/" />
       <PageHeader
         eyebrow="Study"
         title="Daily challenge"
@@ -200,6 +201,7 @@ export default function Challenge() {
         of year, so a study group all working on the same day gets the same five questions. Other revision:{' '}
         <Link to="/flashcards">flashcards</Link> and the <Link to="/cases">case simulator</Link>.
       </Callout>
+          <PageFooter />
     </div>
   );
 }

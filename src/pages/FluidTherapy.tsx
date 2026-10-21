@@ -1,5 +1,5 @@
 import FluidCalculator from '../components/FluidCalculator';
-import { PageHeader, Callout, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Disclaimer, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 import { SPECIES, SPECIES_ICON } from '../data/species';
 
@@ -8,6 +8,7 @@ export default function FluidTherapy() {
 
   return (
     <div className="container page">
+      <BackLink to="/tools" />
       <PageHeader
         eyebrow="Tool"
         title="Fluid therapy planner"
@@ -90,6 +91,7 @@ export default function FluidTherapy() {
       </Callout>
 
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

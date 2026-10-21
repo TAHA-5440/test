@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { PageHeader, Callout } from '../components/ui';
+import { PageHeader, Callout, BackLink, PageFooter } from '../components/ui';
 
 export default function Disclaimer() {
   return (
     <div className="container page" style={{ maxWidth: '860px' }}>
+      <BackLink to="/" />
       <PageHeader eyebrow="Legal" title="Disclaimer" />
 
       <section className="section">
@@ -89,6 +90,7 @@ export default function Disclaimer() {
       <p className="small muted mt-4">
         See <Link to="/about">sources &amp; method</Link> for how the content is compiled and cited.
       </p>
+          <PageFooter />
     </div>
   );
 }

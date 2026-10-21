@@ -4,7 +4,7 @@ import { DRUGS, DRUG_MAP, searchDrugs } from '../data/drugs';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import { screenPrescription, severityLabel } from '../engine/interactions';
 import type { Severity } from '../engine/interactions';
-import { PageHeader, Callout, Badge, Chip, Empty, Disclaimer, Sources } from '../components/ui';
+import { PageHeader, Callout, Badge, Chip, Empty, Disclaimer, Sources, BackLink, PageFooter } from '../components/ui';
 import type { SpeciesId } from '../types';
 import { usePreferences } from '../state/PreferencesContext';
 
@@ -38,6 +38,7 @@ export default function Interactions() {
 
   return (
     <div className="container page">
+      <BackLink to="/tools" />
       <PageHeader
         eyebrow="Tool"
         title="Interaction checker"
@@ -241,6 +242,7 @@ export default function Interactions() {
         label="Sources for the drugs on this prescription"
       />
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

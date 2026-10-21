@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { VACCINES, VACCINE_SPECIES, vaccinesFor, reminderIntervalDays } from '../data/vaccines';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
-import { PageHeader, Callout, Chip, Badge, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Chip, Badge, Disclaimer, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 
 function addDays(days: number): string {
@@ -20,6 +20,7 @@ export default function Vaccinations() {
 
   return (
     <div className="container page">
+      <BackLink to="/tools" />
       <PageHeader
         eyebrow="Reference"
         title="Vaccination schedules"
@@ -106,6 +107,7 @@ export default function Vaccinations() {
 
       <p className="tiny subtle mt-4">{VACCINES.length} schedule rows across {VACCINE_SPECIES.length} species.</p>
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

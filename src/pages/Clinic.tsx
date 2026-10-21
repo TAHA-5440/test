@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { PatientRecord, Visit, SpeciesId } from '../types';
 import { SPECIES_ICON, speciesLabel, SPECIES } from '../data/species';
-import { PageHeader, Callout, Badge, Empty } from '../components/ui';
+import { PageHeader, Callout, Badge, Empty, BackLink, PageFooter } from '../components/ui';
 
 const STORE_KEY = 'vetmasterji:clinic:v1';
 
@@ -152,6 +152,7 @@ export default function Clinic() {
 
   return (
     <div className="container page">
+      <BackLink to="/" />
       <PageHeader
         eyebrow="Practice"
         title="Patient records"
@@ -446,6 +447,7 @@ export default function Clinic() {
           )}
         </div>
       </div>
+          <PageFooter />
     </div>
   );
 }

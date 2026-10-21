@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NOTES, NOTE_CATEGORIES, searchNotes } from '../data/notes';
 import { SPECIES_ICON } from '../data/species';
-import { PageHeader, Chip, Badge, Empty, Callout } from '../components/ui';
+import { PageHeader, Chip, Badge, Empty, Callout, BackLink, PageFooter } from '../components/ui';
 
 export default function Notes() {
   const [query, setQuery] = useState('');
@@ -15,6 +15,7 @@ export default function Notes() {
 
   return (
     <div className="container page">
+      <BackLink to="/" />
       <PageHeader
         eyebrow="Reference"
         title="Clinical notes"
@@ -87,6 +88,7 @@ export default function Notes() {
         Every note carries its sources at the bottom and a last-reviewed date. Where guidance differs between references, the
         note says which one it follows and why.
       </Callout>
+          <PageFooter />
     </div>
   );
 }

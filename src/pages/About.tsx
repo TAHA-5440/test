@@ -4,11 +4,12 @@ import { DRUGS } from '../data/drugs';
 import { DISEASES } from '../data/diseases';
 import { SIGNS } from '../data/signs';
 import { SPECIES } from '../data/species';
-import { PageHeader, Callout } from '../components/ui';
+import { PageHeader, Callout, BackLink, PageFooter } from '../components/ui';
 
 export default function About() {
   return (
     <div className="container page">
+      <BackLink to="/" />
       <PageHeader
         eyebrow="About"
         title="Sources &amp; method"
@@ -150,6 +151,7 @@ export default function About() {
           ))}
         </div>
       </section>
+          <PageFooter />
     </div>
   );
 }

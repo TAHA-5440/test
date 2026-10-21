@@ -3,7 +3,7 @@ import { DISEASE_MAP, DISEASES } from '../data/diseases';
 import { signLabel } from '../data/signs';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import { DRUG_MAP } from '../data/drugs';
-import { PageHeader, Callout, Badge, Chip, Sources, Empty, Disclaimer, KeyValue } from '../components/ui';
+import { PageHeader, Callout, Badge, Chip, Sources, Empty, Disclaimer, KeyValue, BackLink, PageFooter } from '../components/ui';
 import type { SpeciesId } from '../types';
 
 export default function DiseaseDetail() {
@@ -13,6 +13,7 @@ export default function DiseaseDetail() {
   if (!disease) {
     return (
       <div className="container page">
+      <BackLink to="/diseases" />
         <Empty title="That condition is not in the reference">
           The library currently holds {DISEASES.length} conditions. <Link to="/diseases">Browse the full list</Link>.
         </Empty>
@@ -184,6 +185,7 @@ export default function DiseaseDetail() {
 
       <Sources ids={disease.sources} />
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

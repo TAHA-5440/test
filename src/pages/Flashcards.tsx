@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CHALLENGES } from '../data/challenges';
 import { DRUGS } from '../data/drugs';
-import { PageHeader, Callout, Badge, Chip, Empty } from '../components/ui';
+import { PageHeader, Callout, Badge, Chip, Empty, BackLink, PageFooter } from '../components/ui';
 
 type Deck = 'questions' | 'drugs';
 
@@ -102,6 +102,7 @@ export default function Flashcards() {
 
   return (
     <div className="container page" style={{ maxWidth: '860px' }}>
+      <BackLink to="/" />
       <PageHeader
         eyebrow="Study"
         title="Flashcards"
@@ -198,6 +199,7 @@ export default function Flashcards() {
       <Callout tone="plain" title="Progress stays on the device">
         Card scheduling is stored in your browser's local storage. Clearing site data resets the deck, and nothing is uploaded.
       </Callout>
+          <PageFooter />
     </div>
   );
 }

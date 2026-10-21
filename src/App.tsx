@@ -57,6 +57,7 @@ export default function App() {
 
         <Route path="assistant" element={<Assistant />} />
         <Route path="challenge" element={<Challenge />} />
+        <Route path="daily-challenge" element={<Challenge />} />
         <Route path="flashcards" element={<Flashcards />} />
         <Route path="clinic" element={<Clinic />} />
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { CASES, maxScoreForCase } from '../data/cases';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
-import { PageHeader, Badge, Callout } from '../components/ui';
+import { PageHeader, Badge, Callout, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 
 const DIFF_TONE: Record<string, 'green' | 'amber' | 'red'> = {
@@ -16,6 +16,7 @@ export default function Cases() {
 
   return (
     <div className="container page">
+      <BackLink to="/" />
       <PageHeader
         eyebrow="Study"
         title="Case simulator"
@@ -67,6 +68,7 @@ export default function Cases() {
         Each option carries a score — the best answer earns full marks, a defensible but suboptimal one earns partial, and a
         harmful one scores zero and tells you why. Finishing a case adds 25 points to your total.
       </Callout>
+          <PageFooter />
     </div>
   );
 }

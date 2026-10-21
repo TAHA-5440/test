@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { CASE_MAP, CASES, maxScoreForCase } from '../data/cases';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
 import type { SpeciesId } from '../types';
-import { PageHeader, Callout, Badge, Empty, Sources, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Badge, Empty, Sources, Disclaimer, BackLink, PageFooter } from '../components/ui';
 import { usePreferences } from '../state/PreferencesContext';
 
 interface Answer {
@@ -27,6 +27,7 @@ export default function CasePlayer() {
   if (!studyCase) {
     return (
       <div className="container page">
+      <BackLink to="/cases" />
         <Empty title="That case does not exist">
           There are {CASES.length} cases available. <Link to="/cases">Choose one</Link>.
         </Empty>
@@ -245,6 +246,7 @@ export default function CasePlayer() {
 
       <Sources ids={studyCase.sources} />
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

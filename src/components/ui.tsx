@@ -189,3 +189,24 @@ export function ToolCard({
     </Link>
   );
 }
+
+/**
+ * Page footer used on reference and tool pages, matching the reference site's
+ * "Last reviewed <date> · VetMasterJi" line.
+ */
+export function PageFooter({ lastReviewed = '1 October 2026' }: { lastReviewed?: string }) {
+  return (
+    <p className="page-footer">
+      Last reviewed {lastReviewed} · VetMasterJi
+    </p>
+  );
+}
+
+/** The "Back" affordance that opens every inner page on the reference site. */
+export function BackLink({ to = '/', label = 'Back' }: { to?: string; label?: string }) {
+  return (
+    <div className="back-link">
+      <Link to={to}>← {label}</Link>
+    </div>
+  );
+}

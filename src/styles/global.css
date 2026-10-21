@@ -1484,3 +1484,208 @@ th.num {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+
+/* ---------- Reference-site chrome: Back link + page footer ---------------- */
+
+.back-link {
+  font-size: 0.86rem;
+  font-weight: 560;
+  padding-top: var(--space-4);
+}
+.back-link a {
+  color: var(--text-muted);
+}
+.back-link a:hover {
+  color: var(--teal-700);
+}
+
+.page-footer {
+  margin-top: var(--space-7);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  text-align: center;
+}
+
+/* ---------- Drug card, as rendered on /drugs ----------------------------- */
+
+.drug-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+.drug-card:hover {
+  border-color: var(--teal-500);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.drug-card-name {
+  font-weight: 650;
+  font-size: 0.98rem;
+}
+.drug-card-brands {
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.drug-card-dose {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+.drug-card-species {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+.species-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.species-tag.more {
+  background: var(--teal-50);
+  border-color: var(--teal-200);
+  color: var(--teal-800);
+  font-weight: 650;
+}
+
+/* ---------- /drugs filter bar ------------------------------------------- */
+
+.filter-bar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.filter-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: var(--space-2);
+}
+.class-count {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+  margin-left: 5px;
+  font-weight: 600;
+}
+.result-count {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+.result-count strong {
+  color: var(--text);
+}
+
+/* ---------- Class group heading ----------------------------------------- */
+
+.class-group {
+  margin-bottom: var(--space-6);
+}
+.class-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-4);
+}
+.class-group-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- /tools list -------------------------------------------------- */
+
+.tool-search {
+  position: relative;
+  margin-bottom: var(--space-5);
+}
+.kbd-hint {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border-strong);
+  color: var(--text-subtle);
+  pointer-events: none;
+}
+
+.tool-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+.tool-row:hover {
+  border-color: var(--teal-500);
+  text-decoration: none;
+}
+.tool-row-kind {
+  flex-shrink: 0;
+  width: 130px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--teal-800);
+}
+.tool-row-body {
+  flex: 1;
+  min-width: 0;
+}
+.tool-row-title {
+  font-weight: 650;
+  margin-bottom: 2px;
+}
+.tool-row-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.tool-row-open {
+  flex-shrink: 0;
+  font-size: 0.86rem;
+  font-weight: 620;
+  color: var(--teal-700);
+}
+
+@media (max-width: 720px) {
+  .tool-row {
+    flex-wrap: wrap;
+  }
+  .tool-row-kind {
+    width: auto;
+  }
+}

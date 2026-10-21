@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TOXICOLOGY, searchToxicology } from '../data/toxicology';
 import { SPECIES_ICON, speciesLabel } from '../data/species';
-import { PageHeader, Callout, Badge, Empty, Sources, Disclaimer } from '../components/ui';
+import { PageHeader, Callout, Badge, Empty, Sources, Disclaimer, BackLink, PageFooter } from '../components/ui';
 
 export default function Toxicology() {
   const [query, setQuery] = useState('');
@@ -12,6 +12,7 @@ export default function Toxicology() {
 
   return (
     <div className="container page">
+      <BackLink to="/tools" />
       <PageHeader
         eyebrow="Tool"
         title="Toxicology &amp; antidotes"
@@ -152,6 +153,7 @@ export default function Toxicology() {
       </section>
 
       <Disclaimer />
+          <PageFooter />
     </div>
   );
 }

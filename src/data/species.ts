@@ -263,3 +263,25 @@ export const SPECIES_ICON: Record<SpeciesId, string> = {
   reptile: '🦎',
   camel: '🐪',
 };
+
+/**
+ * Species filter groups used by the drug database, following the grouping on
+ * the reference site's /drugs page rather than listing 15 species flat.
+ */
+export const SPECIES_GROUPS: { id: string; label: string; species: SpeciesId[] }[] = [
+  { id: 'dogs', label: 'Dogs', species: ['dog'] },
+  { id: 'cats', label: 'Cats', species: ['cat'] },
+  { id: 'cattle', label: 'Cattle & buffalo', species: ['cattle', 'buffalo'] },
+  { id: 'horses', label: 'Horses', species: ['horse'] },
+  { id: 'sheep-goats', label: 'Sheep & goats', species: ['sheep', 'goat'] },
+  { id: 'pigs', label: 'Pigs', species: ['pig'] },
+  { id: 'birds', label: 'Poultry & birds', species: ['poultry', 'bird'] },
+  { id: 'exotics', label: 'Rabbits & exotics', species: ['rabbit', 'ferret', 'guinea-pig', 'reptile', 'camel'] },
+];
+
+export function speciesGroupLabel(species: SpeciesId): string {
+  for (const g of SPECIES_GROUPS) {
+    if (g.species.includes(species)) return g.label;
+  }
+  return speciesLabel(species);
+}

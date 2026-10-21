@@ -291,3 +291,31 @@ Fetched over HTTPS during the analysis:
 `/for-students` · `/reference-ranges`
 
 Reference skill: `github.com/morluto/rea` (REA — reverse engineering and analysis).
+
+## 9. UI parity audit
+
+Structure and copy were re-checked page by page against the reference in October 2026.
+
+### Matched
+
+| Page | What now matches |
+| --- | --- |
+| `/` | All 12 sections in order with the original copy; the three live instruments reproduce the original's own figures |
+| `/drugs` | Species filter as 8 groups (Dogs, Cats, Cattle & buffalo, Horses, Sheep & goats, Pigs, Poultry & birds, Rabbits & exotics); class filter with the published counts; "N of N drugs"; grouped by class with "N drugs →" headings; card format name · brands · dose · route · species chips · +N |
+| `/tools` | 11 tools with kind badges ("Interactive · free", "Reference", "Free account"), descriptions verbatim, "Open" affordance, search field with the `/` hint |
+| `/drug-calculator` | "Choose from 418 drugs"; Common row; the four-step flow label; "No sign-in / Runs in your browser"; 12 species chips including "Buffalo (as cattle)"; indication select showing "· 10 mg/kg PO"; product select starting with "Dose in mg only"; total dose with its working; "Amount at 50 mg/mL"; "Route · frequency"; the citation; then How-to steps, formulas, worked example (20 kg → 220 mg → 4.4 mL), what it shows, species-coverage table, 18 frequently-looked-up drugs, Safety, 6 FAQs, Sources |
+| `/pricing` | Country/currency selector; hero; Student/Clinician tabs; billing & cancellation; Clinician Premium feature list; Premium Includes; "Premium pays for itself"; the 16-row Free vs Premium comparison table; the three closing cards |
+| All inner pages | "Back" affordance; footer "Last reviewed 1 October 2026 · VetMasterJi" |
+| Routing | `/daily-challenge` added alongside `/challenge`, matching the original's route name |
+
+### Not matched, and why
+
+- **Visual styling.** Colours, type scale, spacing and card shadows are not observable from the
+  public HTML-as-markdown surface, so they are reconstructed rather than copied. Matching them
+  would require fetching the site's compiled CSS, which is out of scope for a public-surface
+  analysis.
+- **Header navigation.** The markdown surface drops the site chrome, so the original's header and
+  footer link sets are not observable.
+- **Content depth.** `/drugs` shows "44 of 44" where the original shows "418 of 418", and the
+  calculator's species strip marks Hedgehogs, Sugar gliders and Primates as unsupported because the
+  corpus has no entries for them. These are the 377-monograph gap, not layout differences.
